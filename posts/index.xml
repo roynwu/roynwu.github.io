@@ -1,0 +1,28 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Roy Wu</title>
+        <link>https://roynwu.github.io/posts/</link>
+        <description>All Posts | Roy Wu</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 06 May 2020 23:16:22 -0700</lastBuildDate><atom:link href="https://roynwu.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Headline-Writer: Abstractive Text Summarization with Attention and Pointer-Generator Network</title>
+    <link>https://roynwu.github.io/headline-writer/</link>
+    <pubDate>Wed, 06 May 2020 23:16:22 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://roynwu.github.io/headline-writer/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/img/projects/headline-writer/featured-image.JPG" referrerpolicy="no-referrer">
+            </div>This repository contains implementations of Sequence-to-sequence (Seq2Seq) neural networks for abstractive text summarization. We implement Attention mechanism, Teacher Forcing algorithm, and Pointer-Generator Network (inspired by Get To The Point: Summarization with Pointer-Generator Networks) in our experiment to improve our baseline models. This work was done in collaboration with Henglin Wu, Ruilin Zhao, and Chenyuan Li.
+[paper] [code]
+Watch our video presentation below:
+  Introduction Sequence-to-sequence (Seq2Seq) neural networks have been proved to be effective in tasks that involve transforming text from one form to another (e.]]></description>
+</item><item>
+    <title>Artificial Anime Character Design: An Application of Generative Adversarial Networks (GANs)</title>
+    <link>https://roynwu.github.io/artificial-anime-character-design/</link>
+    <pubDate>Tue, 05 May 2020 23:16:22 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://roynwu.github.io/artificial-anime-character-design/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/img/projects/artificial-anime-character-design/featured-image.JPG" referrerpolicy="no-referrer">
+            </div>This repository contains implementations of Generative Adversarial Networks (GANs) to design and generate new face images of anime characters. A few improvement techniques were implemented to enhance the performance of the Deep Covolutional GANs (DCGANs) as well as the quality of the output. Also included is an implementation of Least Squares GAN (LSGAN) and NVIDIA&rsquo;s open source StyleGAN. StyleGAN and StyleGAN2 are new state-of-the-art GAN architectures developed by a team from NVIDIA.]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Artificial Anime Character Design: An Application of Generative Adversarial Networks (GANs) - Roy Wu</title><meta name="Description" content="Roy Wu"><meta property="og:title" content="Artificial Anime Character Design: An Application of Generative Adversarial Networks (GANs)" />
+<meta property="og:description" content="This repository contains implementations of Generative Adversarial Networks (GANs) to design and generate new face images of anime characters. A few improvement techniques were implemented to enhance the performance of the Deep Covolutional GANs (DCGANs) as well as the quality of the output. Also included is an implementation of Least Squares GAN (LSGAN) and NVIDIA&rsquo;s open source StyleGAN. StyleGAN and StyleGAN2 are new state-of-the-art GAN architectures developed by a team from NVIDIA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://roynwu.github.io/artificial-anime-character-design/" />
+<meta property="og:image" content="https://roynwu.github.io/img/avatar.JPG"/>
+<meta property="article:published_time" content="2020-05-05T23:16:22-07:00" />
+<meta property="article:modified_time" content="2020-05-24T23:16:22-07:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://roynwu.github.io/img/avatar.JPG"/>
+
+<meta name="twitter:title" content="Artificial Anime Character Design: An Application of Generative Adversarial Networks (GANs)"/>
+<meta name="twitter:description" content="This repository contains implementations of Generative Adversarial Networks (GANs) to design and generate new face images of anime characters. A few improvement techniques were implemented to enhance the performance of the Deep Covolutional GANs (DCGANs) as well as the quality of the output. Also included is an implementation of Least Squares GAN (LSGAN) and NVIDIA&rsquo;s open source StyleGAN. StyleGAN and StyleGAN2 are new state-of-the-art GAN architectures developed by a team from NVIDIA."/>
+<meta name="application-name" content="Roy Wu">
+<meta name="apple-mobile-web-app-title" content="Roy Wu"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://roynwu.github.io/artificial-anime-character-design/" /><link rel="next" href="https://roynwu.github.io/headline-writer/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Artificial Anime Character Design: An Application of Generative Adversarial Networks (GANs)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/roynwu.github.io\/artificial-anime-character-design\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/roynwu.github.io\/img\/projects\/headline-writer\/featured-image.JPG",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","wordcount":  1987 ,
+        "url": "https:\/\/roynwu.github.io\/artificial-anime-character-design\/","datePublished": "2020-05-05T23:16:22-07:00","dateModified": "2020-05-24T23:16:22-07:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "Roy Wu",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/roynwu.github.io\/img\/avatar.JPG",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Roy Wu"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Roy Wu"> Roy Wu<span class="header-title-post">Data Scientist</span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> Home </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/resume/resume.pdf"> Resume </a><a class="menu-item" href="https://github.com/roynwu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Roy Wu"> Roy Wu<span class="header-title-post">Data Scientist</span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/" title="">Home</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/resume/resume.pdf" title="">Resume</a><a class="menu-item" href="https://github.com/roynwu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Artificial Anime Character Design: An Application of Generative Adversarial Networks (GANs)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://roynwu.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Roy Wu</a></span>&nbsp;<span class="post-category">included in <a href="/categories/computer-vision/"><i class="far fa-folder fa-fw"></i>Computer Vision</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-05">2020-05-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1987 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading/normal.min.svg"
+        data-src="/img/projects/artificial-anime-character-design/featured-image.JPG"
+        data-srcset="/img/projects/artificial-anime-character-design/featured-image.JPG, /img/projects/artificial-anime-character-design/featured-image.JPG 1.5x, /img/projects/artificial-anime-character-design/featured-image.JPG 2x"
+        data-sizes="auto"
+        alt="/img/projects/artificial-anime-character-design/featured-image.JPG"
+        title="/img/projects/artificial-anime-character-design/featured-image.JPG" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#related-work">Related Work</a></li>
+        <li><a href="#dataset">Dataset</a></li>
+        <li><a href="#generative-adversarial-network">Generative Adversarial Network</a></li>
+        <li><a href="#deep-convolutional-gan-dcgan">Deep Convolutional GAN (DCGAN)</a>
+          <ul>
+            <li><a href="#training-and-hyperparameter-tuning">Training and Hyperparameter Tuning</a></li>
+            <li><a href="#results">Results</a></li>
+          </ul>
+        </li>
+        <li><a href="#least-squares-gan-lsgan">Least Squares GAN (LSGAN)</a>
+          <ul>
+            <li><a href="#training-and-hyperparameter-tuning-1">Training and Hyperparameter Tuning</a></li>
+            <li><a href="#results-1">Results</a></li>
+          </ul>
+        </li>
+        <li><a href="#stylegan">StyleGAN</a>
+          <ul>
+            <li><a href="#results-2">Results</a></li>
+          </ul>
+        </li>
+        <li><a href="#quantifying-results">Quantifying Results</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#acknowledgement">Acknowledgement</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>This repository contains implementations of Generative Adversarial Networks (GANs) to design and generate new face images of anime characters. A few improvement techniques were implemented to enhance the performance of the Deep Covolutional GANs (DCGANs) as well as the quality of the output. Also included is an implementation of Least Squares GAN (LSGAN) and NVIDIA&rsquo;s open source StyleGAN. StyleGAN and StyleGAN2 are new state-of-the-art GAN architectures developed by a team from NVIDIA. These architectures address many of the shortcomings of previous GAN implementations and dramatically increase image quality. This work was done in collaboration with Riley Xu and Tianhao Lu.</p>
+<p>[<strong><a href="report.pdf" rel="">paper</a></strong>] [<strong><a href="https://github.com/roynwu/Artificial-Anime-Character-Design" target="_blank" rel="noopener noreffer">code</a></strong>]</p>
+<h3 id="introduction">Introduction</h3>
+<p>Generative Adversarial Network (GAN) is a framework for deep learning models to generate superficial data mimicking a training distribution invented by <a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener noreffer">Ian Goodfellow</a>. Facebook’s AI research director Yann LeCun called adversarial training “the most interesting idea in the last 10 years of ML”. GANs have been successfully applied to many image categories, including objects as complicated as human faces, such as <a href="https://www.thispersondoesnotexist.com/" target="_blank" rel="noopener noreffer">This Person Does Not Exist</a>. There are many other attempts to apply GANs on paintings, objects, and even Pokemon. In this work, we train and generate images of character faces from Japanese anime.</p>
+<p>Anime is an incredibly popular media format around the world. However, coming up with new character designs takes tremendous effort and skill. GANs offer the opportunity to create new and custom designs without extensive input from a professional. This may help anime studios dramatically shorten development times, provide inspiration to professional and hobbyist character designers, and with sufficient progress may even be able to take over some aspects of the animation.</p>
+<h3 id="related-work">Related Work</h3>
+<p>There exist few attempts applying the GAN model to the problem of generating facial images of anime characters. DRAGAN gives a promising result <a href="https://arxiv.org/abs/1708.05509" target="_blank" rel="noopener noreffer">(Jin, 2017)</a>; however, other attempts tend to be limited to blog posts and personal github repos, and the methodology and data samples are not well described by these sources. Moreover, the results of these projects are frequently defective, with effects such as asymmetric facial features and having large swaths that make them look like water-color paintings. Most disappointingly, these authors only generated female character faces.</p>
+<p>In this work, we seek to improve in the generation of anime character faces. In the following sections, we first describe the data set that we use. Then, we detail three GAN model architectures and show the results. Finally, we compare and quantify the differences between the architectures.</p>
+<h3 id="dataset">Dataset</h3>
+<p>Previous works mentioned above have datasets that suffer from high variance and noise, leading to results that were not too promising. Our goal for the data preparation is to find a clean, high-quality dataset and preprocess it in such a way that it can be used seamlessly with PyTorch.</p>
+<p>Our dataset consists of 21551 unlabeled anime faces obtained from <a href="https://www.kaggle.com/soumikrakshit/anime-faces" target="_blank" rel="noopener noreffer">Kaggle</a>. This is a cleaner version of a dataset originally on <a href="https://github.com/Mckinsey666/Anime-Face-Dataset" target="_blank" rel="noopener noreffer">Github</a> where the images are fetched from <a href="http://www.getchu.com/" target="_blank" rel="noopener noreffer">Getchu</a> and then cropped using the anime face detection algorithm <a href="https://github.com/nagadomi/lbpcascade_animeface" target="_blank" rel="noopener noreffer">(Nagadomi, 2011)</a>. The images are generally high-quality, but a few suffer from bad crops. Almost all images have white or otherwise minimal background. The range in art styles, pose, expressions, and hair is sufficiently variant. Notably, this data set does contain male characters, albeit at a smaller proportion, and our networks are trained to generate male faces unlike previous works.</p>
+<p>We transformed and loaded the dataset using Pytorch&rsquo;s ImageFolder and DataLoader classes. We removed as many of the bad samples as possible, mainly poor crops. Additionally, all images are resized to 64x64 for further convenience.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/sample.png" title="/img/projects/artificial-anime-character-design/sample.png" data-thumbnail="/img/projects/artificial-anime-character-design/sample.png" data-sub-html="<h2>Sample images from dataset</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/sample.png"
+            data-srcset="/img/projects/artificial-anime-character-design/sample.png, /img/projects/artificial-anime-character-design/sample.png 1.5x, /img/projects/artificial-anime-character-design/sample.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/sample.png" width="400" />
+    </a><figcaption class="image-caption">Sample images from dataset</figcaption>
+    </figure></p>
+<h3 id="generative-adversarial-network">Generative Adversarial Network</h3>
+<p>GAN uses a generator network $G$ to generate fake samples by mapping a latent space vector $z$ sampled from a normal distribution into a sample $G(z)$. GAN uses a min-max game where discriminator network $D$ tries to maximize its accuracy in classifying real and fake data and $G$ tries to minimize the probability that $D$ will predict its outputs are fake <a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener noreffer">(Goodfellow, 2014)</a>. The objective can be formally expressed as:</p>
+<p>$$\underset{\scriptsize G}{\text{\scriptsize min}} \underset{\scriptsize D}{\text{\scriptsize max}}V(D,G) = \mathbb{E}_x[\log D(x)]\space+\space\mathbb{E}_z[\log(1-D(G(z)))]$$</p>
+<p>The generator and discriminator train off of each other, enabling a GAN to learn unsupervised. In general, the training of a GAN occurs as below:</p>
+<ul>
+<li>
+<p>1 - Create a standard normally distributed vector $z$, with arbitrary feature length.</p>
+</li>
+<li>
+<p>2 - Zero out gradient for $G$, generate fake image, and calculate $L_G$, where:
+$$L_G = \frac{1}{n} \sum_{i=0}^{n} L_{CE}(D(G(z)), 1)$$</p>
+</li>
+<li>
+<p>3 - Backpropogate $L_G$ and step up the optimizer</p>
+</li>
+<li>
+<p>4 - Zero out gradient for $D$ and calculate $L_D$, where:
+$$L_D = \frac{1}{2n} \sum_{i=0}^{n} L_{CE}(D(X_i), 1) + L_{CE}(D(G(z)), 0)$$</p>
+</li>
+<li>
+<p>5 - Backpropogate $L_D$ and step up optimizer</p>
+</li>
+</ul>
+<br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/summary_figure.png" title="/img/projects/artificial-anime-character-design/summary_figure.png" data-thumbnail="/img/projects/artificial-anime-character-design/summary_figure.png" data-sub-html="<h2>Overview of GAN process and data flow</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/summary_figure.png"
+            data-srcset="/img/projects/artificial-anime-character-design/summary_figure.png, /img/projects/artificial-anime-character-design/summary_figure.png 1.5x, /img/projects/artificial-anime-character-design/summary_figure.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/summary_figure.png" width="600" />
+    </a><figcaption class="image-caption">Overview of GAN process and data flow</figcaption>
+    </figure>
+<p>While all GANs have the same basic structure detailed above, there exist many subtleties that result in very different implementations. We explore three implementations: Deep Convolutional, Least Squares, and StyleGAN.</p>
+<h3 id="deep-convolutional-gan-dcgan">Deep Convolutional GAN (DCGAN)</h3>
+<p>Our base model architecture is inspired by Deep Convolutional GAN (DCGAN) <a href="https://arxiv.org/abs/1511.06434" target="_blank" rel="noopener noreffer">(Radford, 2015)</a>. The discriminator is made up of strided convolution layers, 2d batch norm layers, LeakyReLUs, and outputs the final probability through a Sigmoid activation function. The generator consists of a series of strided two dimensional convolutional transpose layers, each followed by a 2d batch norm layer and a ReLU activation. The outputs go through a tanh function.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/dcgan.png" title="/img/projects/artificial-anime-character-design/dcgan.png" data-thumbnail="/img/projects/artificial-anime-character-design/dcgan.png" data-sub-html="<h2>Generator architecture - it projects latent vector $z$ to a 64x64 RBG image through a series of fractionally-strided convolutions</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/dcgan.png"
+            data-srcset="/img/projects/artificial-anime-character-design/dcgan.png, /img/projects/artificial-anime-character-design/dcgan.png 1.5x, /img/projects/artificial-anime-character-design/dcgan.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/dcgan.png" width="550" />
+    </a><figcaption class="image-caption">Generator architecture - it projects latent vector $z$ to a 64x64 RBG image through a series of fractionally-strided convolutions</figcaption>
+    </figure></p>
+<h4 id="training-and-hyperparameter-tuning">Training and Hyperparameter Tuning</h4>
+<p>The figures below show $L_G$ and $L_D$ throughout our training:
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/loss_g.png" title="/img/projects/artificial-anime-character-design/loss_g.png" data-thumbnail="/img/projects/artificial-anime-character-design/loss_g.png" data-sub-html="<h2>Generator loss</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/loss_g.png"
+            data-srcset="/img/projects/artificial-anime-character-design/loss_g.png, /img/projects/artificial-anime-character-design/loss_g.png 1.5x, /img/projects/artificial-anime-character-design/loss_g.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/loss_g.png" width="400" />
+    </a><figcaption class="image-caption">Generator loss</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/loss_d.png" title="/img/projects/artificial-anime-character-design/loss_d.png" data-thumbnail="/img/projects/artificial-anime-character-design/loss_d.png" data-sub-html="<h2>Discriminator loss</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/loss_d.png"
+            data-srcset="/img/projects/artificial-anime-character-design/loss_d.png, /img/projects/artificial-anime-character-design/loss_d.png 1.5x, /img/projects/artificial-anime-character-design/loss_d.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/loss_d.png" width="400" />
+    </a><figcaption class="image-caption">Discriminator loss</figcaption>
+    </figure></p>
+<p>Some things we watched out for during training:</p>
+<ul>
+<li>
+<p>1 - We want to prevent the $L_D$ from going to 0 (this represents a failure mode of training).</p>
+</li>
+<li>
+<p>2 - Both $L_D$ and $L_G$ should not decrease monotonically (they should oscillate around a certain loss), with $L_G$ increasing as a whole and $L_D$ decreasing as a whole.</p>
+</li>
+<li>
+<p>3 - Display sample generated images every a certain number of iterations to watch for mode collapse.</p>
+</li>
+</ul>
+<p>We used a batch size of 64 and a feature length of 100 for vector $z$. For both the $G$ and $D$, we use Adam optimizer because it combines the best properties of the AdaGrad and RMSProp algorithms, which can handle sparse gradients on noisy problems. Since $D$ learns much faster than $G$, we set the learning rate for optimizer for $G$ at 0.0005 and optimizer for $D$ at 0.0001. Additionally, we used fuzzy labels - instead of a hard 0 or 1 as labels for the discriminator, we set them to 0.1 and 0.9 to make the discriminator weaker.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/anime_DCGAN.gif" title="/img/projects/artificial-anime-character-design/anime_DCGAN.gif" data-thumbnail="/img/projects/artificial-anime-character-design/anime_DCGAN.gif" data-sub-html="<h2>Progress of DCGAN generator</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/anime_DCGAN.gif"
+            data-srcset="/img/projects/artificial-anime-character-design/anime_DCGAN.gif, /img/projects/artificial-anime-character-design/anime_DCGAN.gif 1.5x, /img/projects/artificial-anime-character-design/anime_DCGAN.gif 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/anime_DCGAN.gif" width="400" />
+    </a><figcaption class="image-caption">Progress of DCGAN generator</figcaption>
+    </figure></p>
+<h4 id="results">Results</h4>
+<p>Uncurated sample images from our DCGAN model are shown in the figure below. The model was trained on 150 epochs. We find these results quite promising, because most of the generated images are convincing. However, some mistakes are made by the model, such as twisted and broken faces, asymmetric eyes, and non-uniformity in hair. The flaws urge us to try new models.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/fake_samples.png" title="/img/projects/artificial-anime-character-design/fake_samples.png" data-thumbnail="/img/projects/artificial-anime-character-design/fake_samples.png" data-sub-html="<h2>DCGAN generated samples</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/fake_samples.png"
+            data-srcset="/img/projects/artificial-anime-character-design/fake_samples.png, /img/projects/artificial-anime-character-design/fake_samples.png 1.5x, /img/projects/artificial-anime-character-design/fake_samples.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/fake_samples.png" width="400" />
+    </a><figcaption class="image-caption">DCGAN generated samples</figcaption>
+    </figure></p>
+<h3 id="least-squares-gan-lsgan">Least Squares GAN (LSGAN)</h3>
+<p>A large problem with DCGAN is that it can suffer from vanishing gradients. A variation called Least Squares GAN (LSGAN) attempts to combat the vanishing gradients by using a loss function that provides smooth and non-saturating gradient in discriminator $D$ <a href="https://arxiv.org/abs/1611.04076" target="_blank" rel="noopener noreffer">(Mao, 2016)</a>. Formally, the objective functions can be expressed as such:</p>
+<p>$$\underset{D}{\text{min}}V_{LS}(D) = \frac{1}{2}\mathbb{E}_{x}[(D(x) - 1)^2] + \frac{1}{2}\mathbb{E}_{z}[(D(G(z)))^2]$$</p>
+<p>$$\underset{G}{\text{min}}V_{LS}(G) = \frac{1}{2} \mathbb{E}_{z}[(D(G(z)) - 1)^2]$$</p>
+<h4 id="training-and-hyperparameter-tuning-1">Training and Hyperparameter Tuning</h4>
+<p>The model architecture we used for LSGAN is exactly the same as that of DCGAN, with a few minor changes. First, we removed the sigmoid activation function at the end of $D$. Moreover, we adjusted the $L_G$ and $L_D$ functions to follow the objective functions described above. We also use the same hyperparameters as we did for DCGAN.</p>
+<h4 id="results-1">Results</h4>
+<p>Uncurated samples are shown in the figure below, trained on 150 epochs. As expected, LSGAN performs more stable during the learning process. Unfortunately, our generated samples appear to have more artifacts and less variation.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/fake_lsgan.png" title="/img/projects/artificial-anime-character-design/fake_lsgan.png" data-thumbnail="/img/projects/artificial-anime-character-design/fake_lsgan.png" data-sub-html="<h2>LSGAN generated samples</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/fake_lsgan.png"
+            data-srcset="/img/projects/artificial-anime-character-design/fake_lsgan.png, /img/projects/artificial-anime-character-design/fake_lsgan.png 1.5x, /img/projects/artificial-anime-character-design/fake_lsgan.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/fake_lsgan.png" width="400" />
+    </a><figcaption class="image-caption">LSGAN generated samples</figcaption>
+    </figure></p>
+<h3 id="stylegan">StyleGAN</h3>
+<p>StyleGAN and StyleGAN2 are new state-of-the-art GAN architectures developed by a team from NVIDIA <a href="https://arxiv.org/abs/1912.04958" target="_blank" rel="noopener noreffer">(Karras, 2020)</a>. These architectures address many of the shortcomings of previous GAN implementations and dramatically increase image quality.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/stylegan.png" title="/img/projects/artificial-anime-character-design/stylegan.png" data-thumbnail="/img/projects/artificial-anime-character-design/stylegan.png" data-sub-html="<h2>StyleGAN architecture</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/stylegan.png"
+            data-srcset="/img/projects/artificial-anime-character-design/stylegan.png, /img/projects/artificial-anime-character-design/stylegan.png 1.5x, /img/projects/artificial-anime-character-design/stylegan.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/stylegan.png" width="350" />
+    </a><figcaption class="image-caption">StyleGAN architecture</figcaption>
+    </figure></p>
+<p>StyleGAN uses a progressive architecture. Both the generator and discriminator are first trained only on 4x4 pixel images. After sufficient progress, a new layer block is added to both networks to handle 8x8 images. This doubling procedure continues until reaching the desired image size. This progression allows the generator to learn fine features after already having learned coarse features, significantly easing the training.</p>
+<p>Another key innovation is the adoption of techniques from style-transfer learning. Instead of inputting the latent vector directly into the first layer of the convolution, there is a separate mapping network that processes the latent vector into an intermediate latent vector. This is then transformed into a style vector $y_i$, via a learned affine transformation, and fed into the synthesis network between each convolution layer.
+The style transfer is done via adaptive instance normalization (AdaIN):</p>
+<p>$$\text{AdaIN}(x, y_i) = y_{i,s} \frac{x - \bar x}{\sigma(x)} + y_{i,b}$$</p>
+<p>Above, $y_i = (y_{i,s}, y_{i,b})$ is the style scale and bias in layer $i$, and $x$ is the input activations from the previous layer.</p>
+<h4 id="results-2">Results</h4>
+<p>Using a baseline StyleGAN architecture implemented in PyTorch, we achieved remarkable results after 150 epochs of training. Uncurated sample fakes are shown in the figure below. Artifacts rarely appear, and there is huge variation between samples. By eye we are generally unable to distinguish fake from real images.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/stylegan_fakes.JPG" title="/img/projects/artificial-anime-character-design/stylegan_fakes.JPG" data-thumbnail="/img/projects/artificial-anime-character-design/stylegan_fakes.JPG" data-sub-html="<h2>StyleGAN generated samples</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/stylegan_fakes.JPG"
+            data-srcset="/img/projects/artificial-anime-character-design/stylegan_fakes.JPG, /img/projects/artificial-anime-character-design/stylegan_fakes.JPG 1.5x, /img/projects/artificial-anime-character-design/stylegan_fakes.JPG 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/stylegan_fakes.JPG" width="750" />
+    </a><figcaption class="image-caption">StyleGAN generated samples</figcaption>
+    </figure></p>
+<h3 id="quantifying-results">Quantifying Results</h3>
+<p>A common metric to quantify the quality of generated images is the Frechet Inception Distance (FID) <a href="https://arxiv.org/abs/1706.08500" target="_blank" rel="noopener noreffer">(Heusel, 2017)</a>. FID is an improvement on the Inception Score <a href="https://arxiv.org/abs/1606.03498" target="_blank" rel="noopener noreffer">(Salimans, 2016)</a> and calculates the similarity between two sets of images, unsupervised. As with Inception Score, FID uses the Inception V3 model, a trained classifier on 1000 objects. However, instead of using the output of the Inception V3 model, FID calculates the Frechet distance of the activations in the coding layer. Because classifier networks tend to learn general features, using the coding layer generalizes the Inception Score to arbitrary image sets with good effect.</p>
+<p>We calculated the FIDs comparing generated images from each GAN implementation with the original data set. All implementations were trained on 150 epochs. The results are summarized in the table below; note lower FID scores are better. StyleGAN  outperformed DCGAN, while LSGAN seriously underperformed. These observations corroborate our qualitative assessments.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/artificial-anime-character-design/fid.png" title="/img/projects/artificial-anime-character-design/fid.png" data-thumbnail="/img/projects/artificial-anime-character-design/fid.png" data-sub-html="<h2>FID calculations for various GAN implementations</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/artificial-anime-character-design/fid.png"
+            data-srcset="/img/projects/artificial-anime-character-design/fid.png, /img/projects/artificial-anime-character-design/fid.png 1.5x, /img/projects/artificial-anime-character-design/fid.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/artificial-anime-character-design/fid.png" width="200" />
+    </a><figcaption class="image-caption">FID calculations for various GAN implementations</figcaption>
+    </figure></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this work, we explored the artificial creation of the anime characters using GANs. By extracting a clean data set and introducing several practical training strategies, we showed that DCGANs can produce convincing fakes. We then implemented StyleGAN, a major improvement on DCGAN both qualitatively and by FID score. Additionally, StyleGAN can be trivially used to mix styles.</p>
+<p>With the power of style mixing, many possibilities exist for future developments. Assuming a data set with labels, the model can learn to generate specific features on-demand, such as hair color or pose. Other directions are to improve the final resolution of generated images, or to generate full-body designs.</p>
+<p>GANs are a very new innovation, but it will not be long before they become used in mainstream disciplines. This work has demonstrated that GANs can be readily applied to the anime industry, allowing for streamlined design of new characters.</p>
+<h3 id="acknowledgement">Acknowledgement</h3>
+<p>We acknowledge NVIDIA for their open-source <a href="https://github.com/lucidrains/stylegan2-pytorch" target="_blank" rel="noopener noreffer">StyleGAN</a> implementation, Google for supplying the <a href="http://download.tensorflow.org/models/image/imagenet/inception-2015-12-05.tgz" target="_blank" rel="noopener noreffer">Inception V3 model</a>, and Github user mseitzer for creating a PyTorch implementation of the <a href="https://github.com/mseitzer/pytorch-fid" target="_blank" rel="noopener noreffer">FID calculation</a>.</p>
+<h3 id="references">References</h3>
+<p>Please see our <strong><a href="report.pdf" rel="">paper</a></strong> for full list of references.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-05-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/artificial-anime-character-design/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/headline-writer/" class="next" rel="next" title="Headline-Writer: Abstractive Text Summarization with Attention and Pointer-Generator Network">Headline-Writer: Abstractive Text Summarization with Attention and Pointer-Generator Network<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">&copy; 2020 <a # href="https://roynwu.github.io">Roy Wu</a> | Powered by <a # href="https://gohugo.io" target="_blank">Hugo</a></div><div class="footer-line"></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
