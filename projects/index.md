@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="/projects.css">
 
-<!-- {{< image width=100% src="/img/projects/headline-writer/featured-image.JPG" >}} -->
+<!--{{< image width=100% src="/img/projects/headline-writer/featured-image.JPG" >}}-->
 
 <p style="color:gray;font-size:15px;margin-bottom: 1.0em"><a href="/categories/">Categories:&nbsp;&nbsp;</a><i class="fa fa-folder-open fa-fw"></i><a href="/categories/computer-vision/">&nbsp;Computer Vision&nbsp;&nbsp;</a><i class="fa fa-folder-open fa-fw"></i><a href="/categories/natural-language-processing/">&nbsp;Natural Language Processing </a></p>
 
