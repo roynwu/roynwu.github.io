@@ -38,8 +38,8 @@
       <p style="font-size:13px"><i class="fa fa-map-marker-alt fa-fw w3-margin-right" style="margin-top: 0.75em"></i>Philadelphia, PA</p>
       <p style="font-size:13px"><i class="fa fa-home fa-fw w3-margin-right"></i>Riverside, CA</p>
       <p style="font-size:13px"><i class="fa fa-envelope fa-fw w3-margin-right"></i>wuroy@seas.upenn.edu</p>
-      <p style="font-size:13px;margin-bottom: -0.5em""><i class="fa fa-mobile fa-fw w3-margin-right"></i>+1 (973) 901-1028</p><hr>
-      <center><p style="font-size:14px;margin-bottom: 2.0em;margin-top: -0.5em">[<b><u><a href="https://roynwu.github.io/resume/resume.pdf">view resume</a></u></b>]</p></center>
+      <p style="font-size:13px;margin-bottom: -0.25em""><i class="fa fa-mobile fa-fw w3-margin-right"></i>+1 (973) 901-1028</p><hr>
+      <center><p style="font-size:14px;margin-bottom: 1.5em;margin-top: -0.25em">[<b><u><a href="https://roynwu.github.io/resume/resume.pdf">view resume</a></u></b>]</p></center>
     </div>
   </div>
 
