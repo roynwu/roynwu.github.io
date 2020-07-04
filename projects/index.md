@@ -14,7 +14,7 @@
 <p style="color:inherit;font-size:15px;margin-bottom: 1.0em"><i class="fa fa-tags fa-fw"></i><a href="/tags/deep-learning/" style="color:inherit;"> Deep Learning</a>,<a href="/tags/natural-language-processing/" style="color:inherit;"> Natural Language Processing</a></p>
 <a href="/headline-writer/" style="color:inherit;"><button class="button button2"><b>blog</b></button></a> 
 <a href="/headline-writer/report.pdf" style="color:inherit;" target="_blank"><button class="button button2"><b>paper</b></button></a> 
-<a href="/headline-writer/" style="color:inherit;" target="_blank"><button class="button button2"><b>code</b></button></a> 
+<a href="https://github.com/roynwu/Headline-Writer" style="color:inherit;" target="_blank"><button class="button button2"><b>code</b></button></a> 
 
 <hr>
 
@@ -25,6 +25,6 @@
 <p style="color:inherit;font-size:15px;margin-bottom: 1.0em"><i class="fa fa-tags fa-fw"></i><a href="/tags/deep-learning/" style="color:inherit;"> Deep Learning</a>,<a href="/tags/computer-vision/" style="color: inherit;"> Computer Vision</a></p>
 <a href="/artificial-anime-character-design/" style="color:inherit;"><button class="button button2"><b>blog</b></button></a> 
 <a href="/artificial-anime-character-design/report.pdf" style="color:inherit;" target="_blank"><button class="button button2"><b>paper</b></button></a> 
-<a href="/artificial-anime-character-design/" style="color:inherit;" target="_blank"><button class="button button2"><b>code</b></button></a>
+<a href="https://github.com/roynwu/Artificial-Anime-Character-Design" style="color:inherit;" target="_blank"><button class="button button2"><b>code</b></button></a>
 
 <hr>
