@@ -68,7 +68,6 @@
     <li style="font-size:14px">Apache Spark</li>
     <li style="font-size:14px">AWS</li>
     <li style="font-size:14px">Git</li>
-    <li style="font-size:14px">Docker</li>
   </ul><br>
   </div>
   </div>
@@ -106,7 +105,7 @@
       <p style="font-size:15px;margin-bottom: -0.5em"><b>The Trade Desk</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">Data Science Intern</p>
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Jun 2020 - Present&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> Boulder, CO</p>
-      <p style="font-size:14px">Performance automation team</p>
+      <p style="font-size:14px">Worked with engineers on the Performance Automation team to productionalize and scale advertising campaign optimization algorithms</p>
       <hr>
     </div>
     <div class="w3-container">
