@@ -104,7 +104,7 @@
     <div class="w3-container">
       <p style="font-size:15px;margin-bottom: -0.5em"><b>The Trade Desk</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">Data Science Intern</p>
-      <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Jun 2020 - Present&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> Boulder, CO</p>
+      <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Jun 2020 - Aug 2020&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> Boulder, CO</p>
       <p style="font-size:14px">Worked with engineers on the Performance Automation team to productionalize and scale advertising campaign optimization algorithms</p>
       <hr>
     </div>
@@ -143,7 +143,7 @@
       <p style="font-size:15px;margin-bottom: -0.5em"><b>New York University</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">College of Arts & Science</p>
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Aug 2013 - May 2017&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> New York, NY</p>
-      <p style="font-size:14px">Bachelor of Arts in Mathematics and Economics</p><br>
+      <p style="font-size:14px">Bachelor of Arts in Mathematics<br>Bachelor of Arts in Economics</p><br>
     </div>
   </div>
 
