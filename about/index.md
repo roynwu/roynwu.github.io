@@ -36,7 +36,7 @@
     </div>
     <div class="w3-container">
       <p style="font-size:13px"><i class="fa fa-map-marker-alt fa-fw w3-margin-right" style="margin-top: 0.75em"></i>Philadelphia, PA</p>
-      <p style="font-size:13px"><i class="fa fa-home fa-fw w3-margin-right"></i>Riverside, CA</p>
+      <p style="font-size:13px"><i class="fa fa-home fa-fw w3-margin-right"></i>New York, NY</p>
       <p style="font-size:13px"><i class="fa fa-envelope fa-fw w3-margin-right"></i>wuroy@seas.upenn.edu</p>
       <p style="font-size:13px;margin-bottom: -0.25em""><i class="fa fa-mobile fa-fw w3-margin-right"></i>+1 (973) 901-1028</p><hr>
       <center><p style="font-size:14px;margin-bottom: 1.5em;margin-top: -0.25em">[<b><u><a href="https://roynwu.github.io/resume/resume.pdf">view resume</a></u></b>]</p></center>
@@ -89,7 +89,7 @@
   <div class="w3-container w3-card w3-margin-bottom">
     <h3 class="w3-padding-16" style="margin-bottom: -1.25em;margin-top: 0.5em"><i class="fa fa-user-circle fa-fw w3-margin-right"></i>ABOUT ME</h3><hr style="margin-bottom: 0.5em">
     <div class="w3-container">
-      <p style="font-size:14px">Hi! My name is <b>Roy</b> and I am a Data Scientist interested in generative models. I am currently pursuing a M.S. in Data Science at the <a href="https://dats.seas.upenn.edu/">University of Pennsylvania</a>, with a concentration in Computer Vision. During Summer 2020, I am working at <a href="https://www.thetradedesk.com/">The Trade Desk</a> (NASDAQ: TTD) as a Data Science Intern. I have 2 years of experience working in the computer software and FinTech industry as a Solutions Analyst. I also have a B.A. in Mathematics and Economics from <a href="http://www.nyu.edu/">New York University</a>. I’m a data enthusiast with a strong background in statistics and extensive hands-on experience in applying machine learning and big data tools including Python, SQL, Scala, and Spark. My hobbies include piano, swimming, muay thai, skateboarding, and filming & video editing, particulary making timelapses and hyperlapses.<center><hr>
+      <p style="font-size:14px">Hi! My name is <b>Roy</b> and I am a graduate student currently pursuing dual M.S. degrees in Data Science and Computer and Information Science at the <a href="https://dats.seas.upenn.edu/">University of Pennsylvania</a>, focusing on machine learning and computer vision. I worked at <a href="https://www.thetradedesk.com/">The Trade Desk</a> (NASDAQ: TTD) as a Data Science Intern during summer of 2020, and I will be working at <a href="https://www.williamblair.com/">William Blair</a> as a Data Science Intern during winter/spring of 2021. I have 2 years of experience working in the computer software and FinTech industry as a Solutions Analyst, and I also have a B.A. in Mathematics and Economics from <a href="http://www.nyu.edu/">New York University</a>. I’m a data enthusiast with a strong background in statistics and extensive hands-on experience in applying machine learning and big data tools including Python, SQL, Scala, and Spark. My hobbies include piano, swimming, muay thai, skateboarding, and filming & video editing, particulary making timelapses and hyperlapses.<center><hr>
         <a style="color:inherit" target="_blank" href="mailto:wuroy@seas.upenn.edu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span>
         <a style="color:inherit" target="_blank" href="https://www.linkedin.com/in/roynwu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i></span></a>
         <a style="color: inherit" target="_blank" href="https://github.com/roynwu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a>
@@ -101,6 +101,13 @@
 
   <div class="w3-container w3-card w3-margin-bottom">
     <h3 class="w3-padding-16" style="margin-bottom: -1.25em;margin-top: 0.5em"><i class="fa fa-briefcase fa-fw w3-margin-right"></i>WORK EXPERIENCE</h3><hr style="margin-bottom: 0.5em">
+    <div class="w3-container">
+      <p style="font-size:15px;margin-bottom: -0.5em"><b>William Blair</b></p>
+      <p style="font-size:14px;margin-bottom: -0.25em">Data Science Intern</p>
+      <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Jan 2021 - May 2021&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> Chicago, IL</p>
+      <p style="font-size:14px">Working on machine learning projects aimed to increase ROI in the private wealth management division</p>
+      <hr>
+    </div>
     <div class="w3-container">
       <p style="font-size:15px;margin-bottom: -0.5em"><b>The Trade Desk</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">Data Science Intern</p>
@@ -135,15 +142,15 @@
     <div class="w3-container">
       <p style="font-size:15px;margin-bottom: -0.5em"><b>University of Pennsylvania</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">School of Engineering & Applied Science</p>
-      <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Expected May 2021&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> Philadelphia, PA</p>
-      <p style="font-size:14px">Master of Science in Engineering in Data Science</p>
+      <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Expected May 2022&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> Philadelphia, PA</p>
+      <p style="font-size:14px">Master of Science in Engineering, Data Science<br>Master of Science in Engineering, Computer & Information Science</p>
       <hr>
     </div>
     <div class="w3-container">
       <p style="font-size:15px;margin-bottom: -0.5em"><b>New York University</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">College of Arts & Science</p>
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Aug 2013 - May 2017&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> New York, NY</p>
-      <p style="font-size:14px">Bachelor of Arts in Mathematics<br>Bachelor of Arts in Economics</p><br>
+      <p style="font-size:14px">Bachelor of Arts, Mathematics<br>Bachelor of Arts, Economics</p><br>
     </div>
   </div>
 
