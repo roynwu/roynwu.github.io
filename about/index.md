@@ -49,10 +49,22 @@
     <p style="font-size:15px;color:gray"><i class="fa fa-code fa-fw"></i> <b>Programming</b></p>
   <ul>
     <li style="font-size:14px">Python</li>
-    <li style="font-size:14px">C++/C</li>
-    <li style="font-size:14px">SQL</li>
+    <li style="font-size:14px">Java</li>  
+    <li style="font-size:14px">C/C++</li>
     <li style="font-size:14px">Scala</li>
-    <li style="font-size:14px">Java</li>
+  </ul><hr>
+      <p style="font-size:15px;color:gray"><i class="fa fa-database fa-fw"></i> <b>Technologies</b></p>
+  <ul>
+    <li style="font-size:14px">SQL</li>
+    <li style="font-size:14px">MongoDB</li>
+    <li style="font-size:14px">Spring Boot</li>
+    <li style="font-size:14px">Docker</li>
+    <li style="font-size:14px">Git</li>
+    <li style="font-size:14px">Jupyter</li>
+    <li style="font-size:14px">Apache Spark</li>
+    <li style="font-size:14px">AWS</li>
+    <li style="font-size:14px">Azure Databricks</li>
+    <li style="font-size:14px">GCP</li>
   </ul><hr>
       <p style="font-size:15px;color:gray"><i class="fab fa-python fa-fw"></i> <b>Libraries</b></p>
   <ul>
@@ -62,13 +74,6 @@
     <li style="font-size:14px">Pandas</li>
     <li style="font-size:14px">Matplotlib</li>
     <li style="font-size:14px">Seaborn</li>
-  </ul><hr>
-      <p style="font-size:15px;color:gray"><i class="fa fa-database fa-fw"></i> <b>Technologies</b></p>
-  <ul>
-    <li style="font-size:14px">Jupyter</li>
-    <li style="font-size:14px">Apache Spark</li>
-    <li style="font-size:14px">AWS</li>
-    <li style="font-size:14px">Git</li>
   </ul><br>
   </div>
   </div>
@@ -90,7 +95,7 @@
   <div class="w3-container w3-card w3-margin-bottom">
     <h3 class="w3-padding-16" style="margin-bottom: -1.25em;margin-top: 0.5em"><i class="fa fa-user-circle fa-fw w3-margin-right"></i>ABOUT ME</h3><hr style="margin-bottom: 0.5em">
     <div class="w3-container">
-      <p style="font-size:14px">Hi! My name is <b>Roy</b> and I am a graduate student currently pursuing dual M.S. degrees in Computer and Information Science and Data Science at the <a href="https://dats.seas.upenn.edu/">University of Pennsylvania</a>, focusing on machine learning and computer vision. I worked at <a href="https://www.thetradedesk.com/">The Trade Desk</a> (NASDAQ: TTD) as a Data Science Intern during summer of 2020, and I will be working at <a href="https://www.williamblair.com/">William Blair</a> as a Data Science Intern during winter/spring of 2021. I have 2 years of experience working in the computer software and FinTech industry as a Solutions Analyst, and I also have a B.A. in Mathematics and Economics from <a href="http://www.nyu.edu/">New York University</a>. I’m a data enthusiast with a strong background in statistics and extensive hands-on experience in applying machine learning and big data tools including Python, SQL, Scala, and Spark. My hobbies include piano, swimming, muay thai, skateboarding, and filming & video editing, particulary making timelapses and hyperlapses.<center><hr>
+      <p style="font-size:14px">Hi! My name is <b>Roy</b>. I am a software engineer and a graduate student, currently pursuing dual M.S. degrees in Computer and Information Science and Data Science at the <a href="https://dats.seas.upenn.edu/">University of Pennsylvania</a>. I have 2 years of experience working in the computer software and FinTech industry as a Solutions Analyst, and I also have a B.A. in Mathematics and Economics from <a href="http://www.nyu.edu/">New York University</a>. My hobbies include piano, swimming, muay thai, skateboarding, and filming & video editing, particulary making timelapses and hyperlapses.<center><hr>
         <a style="color:inherit" target="_blank" href="mailto:wuroy@seas.upenn.edu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span>
         <a style="color:inherit" target="_blank" href="https://www.linkedin.com/in/roynwu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i></span></a>
         <a style="color: inherit" target="_blank" href="https://github.com/roynwu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a>
@@ -106,21 +111,21 @@
       <p style="font-size:15px;margin-bottom: -0.5em"><b>Cisco Systems</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">Software Engineer Intern</p>
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Jun 2021 - May 2022&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> New York, NY</p>
-      <p style="font-size:14px">Currently architecting a data migration project for a WebEx platform (Java, Sring Boot, MongoDB). Previously helped developed a back-end framework that integrates with ISE REST API to allow XML imports to Cisco ISE (Python)</p>
+      <p style="font-size:14px">Currently architecting a data migration project for a WebEx platform with Java, Sring Boot, MongoDB. Previously helped developed a back-end framework that integrates with ISE REST API to allow XML imports to Cisco ISE using Python</p>
       <hr>
     </div>
     <div class="w3-container">
       <p style="font-size:15px;margin-bottom: -0.5em"><b>William Blair</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">Data Science Intern</p>
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Jan 2021 - May 2021&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> Chicago, IL</p>
-      <p style="font-size:14px">Building network graphs and text mining models to effectively analyze investment banking M\&A deal paths</p>
+      <p style="font-size:14px">Built an ETL pipeline and developed a network graph using centrality and community detection algorithms</p>
       <hr>
     </div>
     <div class="w3-container">
       <p style="font-size:15px;margin-bottom: -0.5em"><b>The Trade Desk</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">Data Science Intern</p>
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Jun 2020 - Aug 2020&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> Boulder, CO</p>
-      <p style="font-size:14px">Worked with engineers on the Performance Automation team to productionalize and scale advertising campaign optimization algorithms</p>
+      <p style="font-size:14px">Worked with engineers on the Performance Automation team to design and scale advertising campaign optimization algorithms</p>
       <hr>
     </div>
     <div class="w3-container">
@@ -136,12 +141,6 @@
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Sep 2016 - May 2017&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> New York, NY</p>
       <p style="font-size:14px">Compiled, managed, and quality assured databases covering macroeconomic indicators of Asia-Pacific markets and automated extraction/formatting of data</p>
       <hr>
-    </div>
-    <div class="w3-container">
-      <p style="font-size:15px;margin-bottom: -0.5em"><b>PrimeAlpha</b></p>
-      <p style="font-size:14px;margin-bottom: -0.25em">Project Manager Intern</p>
-      <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Oct 2014 - Feb 2015&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> New York, NY</p>
-      <p style="font-size:14px">Managed various ad hoc projects, such as conducting investor due diligence and developing marketing campaigns for product launching</p><br>
     </div>
   </div>
 
@@ -159,6 +158,24 @@
       <p style="font-size:14px;margin-bottom: -0.25em">College of Arts & Science</p>
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Aug 2013 - May 2017&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> New York, NY</p>
       <p style="font-size:14px">Bachelor of Arts, Mathematics<br>Bachelor of Arts, Economics</p><br>
+    </div>
+  </div>
+
+  <div class="w3-container w3-card w3-margin-bottom">
+    <h3 class="w3-padding-16" style="margin-bottom: -1.25em;margin-top: 0.5em"><i class="fa fa-code fa-fw w3-margin-right"></i>EDUCATION</h3><hr style="margin-bottom: 0.5em">
+    <div class="w3-container">
+      <p style="font-size:15px;margin-bottom: -0.5em"><b>>_Terminal</b></p>
+      <p style="font-size:14px;margin-bottom: -0.25em">(Presented by Citadel & Correlation One)</p>
+      <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Mar 2022&nbsp;&nbsp;
+      <p style="font-size:14px">East Coast Regional - Spring 2022</p>
+      <hr>
+    </div>
+    <div class="w3-container">
+      <p style="font-size:15px;margin-bottom: -0.5em"><b>The Data Open</b></p>
+      <p style="font-size:14px;margin-bottom: -0.25em">(Presented by Citadel & Correlation One)</p>
+      <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Nov 2021&nbsp;&nbsp;
+      <p style="font-size:14px">East Coast Regional - Fall 2021</p>
+      <hr>
     </div>
   </div>
 
