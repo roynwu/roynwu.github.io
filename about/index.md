@@ -30,8 +30,8 @@
       <img src="/img/portrait.jpg" style="width:100%" alt="Avatar">
       <div class="w3-display-bottomleft w3-container">
         <h2 style="color:white;margin-bottom: -0.05em">Roy Wu</h2>
-        <p style="font-size:14px;color:#ECF0F1;margin-bottom: -0.55em">M.S. in Data Science</p>
-        <p style="font-size:14px;color:#ECF0F1">University of Pennsylvania</p>
+        <p style="font-size:14px;color:#ECF0F1;margin-bottom: -0.55em">Software Engineer</p>
+        <p style="font-size:10px;color:#ECF0F1">M.S. in Computer Science + Data Science</p>
       </div>
     </div>
     <div class="w3-container">
@@ -115,7 +115,7 @@
       <hr>
     </div>
     <div class="w3-container">
-      <p style="font-size:15px;margin-bottom: -0.5em"><b>William Blair</b></p>
+      <p style="font-size:15px;margin-bottom: -0.5em"><b>William Blair & Company</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">Data Science Intern</p>
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Jan 2021 - May 2021&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> Chicago, IL</p>
       <p style="font-size:14px">Built an ETL pipeline and developed a network graph using centrality and community detection algorithms</p>
