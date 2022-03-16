@@ -13,8 +13,8 @@
 <p style="color:gray;font-size:14px">This repository contains implementation of a distributed software system. The goal is to design a small clone of Google Apps that primary consists of just two key apps: webmail and storage (similar to Gmail and Google Drive) and leaves out other fancy optics. The key components includes a web frontend and a key-value store backend.</p>
 <p style="color:inherit;font-size:15px;margin-bottom: 1.0em"><i class="fa fa-tags fa-fw"></i><a href="/tags/distributed-systems/" style="color:inherit;"> Distributed Systems</a></p>
 <a href="/penn-cloud/" style="color:inherit;"><button class="button button2"><b>blog</b></button></a> 
-<!-- <a href="" style="color:inherit;" target="_blank"><button class="button button2"><b>paper</b></button></a>  -->
-<!-- <a href="" style="color:inherit;" target="_blank"><button class="button button2"><b>code</b></button></a>  -->
+<button class="button button4"><b><span style="color:lightgray;">paper</span></b></button>
+<button class="button button4"><b><span style="color:lightgray;">code</span></b></button>
 
 <hr>
 
