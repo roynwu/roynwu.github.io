@@ -5,7 +5,7 @@
 
 <!-- {{< image width=100% src="/img/projects/headline-writer/featured-image.JPG" >}} -->
 
-<p style="color:inherit;font-size:15px;margin-bottom: 1.0em"><i class="fa fa-tags fa-fw"></i> <b>Categories:</b>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/deep-learning" style="color:inherit;">Distributed Systems</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/deep-learning" style="color:inherit;">Deep Learning</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/computer-vision" style="color:inherit;">Computer Vision</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/natural-language-processing" style="color:inherit;">Natural Language Processing</a></b></button>
+<p style="color:inherit;font-size:15px;margin-bottom: 1.0em"><i class="fa fa-tags fa-fw"></i> <b>Categories:</b>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/distributed-systems" style="color:inherit;">Distributed Systems</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/deep-learning" style="color:inherit;">Deep Learning</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/computer-vision" style="color:inherit;">Computer Vision</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/natural-language-processing" style="color:inherit;">Natural Language Processing</a></b></button>
 
 <p style="color:darkgray;font-size:14px;margin-top: 2.0em;margin-bottom: -0.5em">December 2021</p>
 <h4><a href="/penn-cloud/" style="color: inherit;">PennCloud: Distributed Cloud Platform</a></h4>
