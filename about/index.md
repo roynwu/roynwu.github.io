@@ -154,8 +154,7 @@
       <p style="font-size:15px;margin-bottom: -0.5em"><b>Haver Analytics</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">Economic Research Intern</p>
       <p style="font-size:13px;color:gray"><i class="fa fa-calendar-alt fa-fw"></i> Sep 2016 - May 2017&nbsp;&nbsp;| <i class="fa fa-map-marker-alt fa-fw"></i> New York, NY</p>
-      <p style="font-size:14px">Compiled, managed, and quality assured databases covering macroeconomic indicators of Asia-Pacific markets and automated extraction/formatting of data</p>
-      <hr>
+      <p style="font-size:14px">Compiled, managed, and quality assured databases covering macroeconomic indicators of Asia-Pacific markets and automated extraction/formatting of data</p><br>
     </div>
   </div>
 
@@ -187,8 +186,7 @@
     <div class="w3-container">
       <p style="font-size:15px;margin-bottom: -0.5em"><b>The Data Open</b></p>
       <p style="font-size:14px;margin-bottom: -0.25em">(Presented by Citadel & Correlation One)</p>
-      <p style="font-size:14px">Fall 2021 - East Coast Regional</p>
-      <hr>
+      <p style="font-size:14px">Fall 2021 - East Coast Regional</p><br>
     </div>
   </div>
 
