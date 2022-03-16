@@ -27,21 +27,21 @@
 
   <div class="w3-text-grey w3-card w3-margin-bottom">
     <div class="w3-display-container">
-      <!-- <img src="/img/portrait.jpg" style="width:100%" alt="Avatar"> -->
-      <img src="/img/alt.JPG" style="width:100%" alt="Avatar">
+      <img src="/img/portrait.jpg" style="width:100%" alt="Avatar">
+      <!-- <img src="/img/alt.JPG" style="width:100%" alt="Avatar"> -->
       <div class="w3-display-bottomleft w3-container">
         <h2 style="color:white;margin-bottom: -0.05em">Roy Wu</h2>
         <p style="font-size:14px;color:#ECF0F1;margin-bottom: -0.55em">Software Engineer</p>
         <p style="font-size:10px;color:#ECF0F1">M.S. in Computer Science + Data Science</p>
       </div>
     </div>
-    <!-- <div class="w3-container"> -->
-      <!-- <p style="font-size:13px"><i class="fa fa-map-marker-alt fa-fw w3-margin-right" style="margin-top: 0.75em"></i>Philadelphia, PA</p> -->
-      <!-- <p style="font-size:13px"><i class="fa fa-home fa-fw w3-margin-right"></i>New York, NY</p> -->
-      <!-- <p style="font-size:13px"><i class="fa fa-envelope fa-fw w3-margin-right"></i>wuroy@seas.upenn.edu</p> -->
-      <!-- <p style="font-size:13px;margin-bottom: -0.25em""><i class="fa fa-mobile fa-fw w3-margin-right"></i>+1 (973) 901-1028</p> --><!-- <hr> -->
-      <!-- <center><p style="font-size:14px;margin-bottom: 1.5em;margin-top: -0.25em">[<b><u><a href="https://roynwu.github.io/resume/resume.pdf">view resume</a></u></b>]</p></center> -->
-    <!-- </div> -->
+    <div class="w3-container">
+      <p style="font-size:13px"><i class="fa fa-map-marker-alt fa-fw w3-margin-right" style="margin-top: 0.75em"></i>Philadelphia, PA</p>
+      <p style="font-size:13px"><i class="fa fa-home fa-fw w3-margin-right"></i>New York, NY</p>
+      <p style="font-size:13px"><i class="fa fa-envelope fa-fw w3-margin-right"></i>wuroy18@gmail.com</p>
+      <!-- <p style="font-size:13px;margin-bottom: -0.25em""><i class="fa fa-mobile fa-fw w3-margin-right"></i>+1 (973) 901-1028</p> --><hr>
+      <center><p style="font-size:14px;margin-bottom: 1.5em;margin-top: -0.25em">[<b><u><a href="https://roynwu.github.io/resume/resume.pdf">view resume</a></u></b>]</p></center>
+    </div>
   </div>
 
   <div class="w3-container w3-card w3-margin-bottom">
@@ -109,7 +109,7 @@
         <source src="/img/monaco.mov" type="video/mp4">
         </video>
         <center><hr>
-        <a style="color:inherit" target="_blank" href="mailto:wuroy@seas.upenn.edu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span>
+        <a style="color:inherit" target="_blank" href="mailto:wuroy18@gmail.com"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span>
         <a style="color:inherit" target="_blank" href="https://www.linkedin.com/in/roynwu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i></span></a>
         <a style="color: inherit" target="_blank" href="https://github.com/roynwu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-github fa-stack-1x fa-inverse"></i></span></a>
         <a style="color: inherit" target="_blank" href="https://www.instagram.com/willroygu"><span class="fa-stack fa-2x" style="font-size:14px"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-instagram fa-stack-1x fa-inverse"></i></span></a>
