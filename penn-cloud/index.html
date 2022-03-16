@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>PennCloud: Distributed Cloud Platform - Roy Wu</title><meta name="Description" content="Roy Wu"><meta property="og:title" content="PennCloud: Distributed Cloud Platform" />
+<meta property="og:description" content="This repository contains implementation of a distributed software system. The goal is to design a small clone of Google Apps that primary consists of just two key apps: webmail and storage (similar to Gmail and Google Drive) and leaves out other fancy optics. The key components includes a web frontend and a key-value store backend. This work was done in collaboration with Thomas Donnelly, Katrina Ashton, and Jacob Glenn.
+Design A basic session consists of a client connecting to our load balancer and getting redirected to a running frontend server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://roynwu.github.io/penn-cloud/" />
+<meta property="og:image" content="https://roynwu.github.io/img/avatar.JPG"/>
+<meta property="article:published_time" content="2021-12-24T23:16:22-07:00" />
+<meta property="article:modified_time" content="2021-12-24T23:16:22-07:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://roynwu.github.io/img/avatar.JPG"/>
+
+<meta name="twitter:title" content="PennCloud: Distributed Cloud Platform"/>
+<meta name="twitter:description" content="This repository contains implementation of a distributed software system. The goal is to design a small clone of Google Apps that primary consists of just two key apps: webmail and storage (similar to Gmail and Google Drive) and leaves out other fancy optics. The key components includes a web frontend and a key-value store backend. This work was done in collaboration with Thomas Donnelly, Katrina Ashton, and Jacob Glenn.
+Design A basic session consists of a client connecting to our load balancer and getting redirected to a running frontend server."/>
+<meta name="application-name" content="Roy Wu">
+<meta name="apple-mobile-web-app-title" content="Roy Wu"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://roynwu.github.io/penn-cloud/" /><link rel="prev" href="https://roynwu.github.io/headline-writer/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "PennCloud: Distributed Cloud Platform",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/roynwu.github.io\/penn-cloud\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/roynwu.github.io\/img\/projects\/headline-writer\/featured-image.JPG",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Distributed Systems","wordcount":  3391 ,
+        "url": "https:\/\/roynwu.github.io\/penn-cloud\/","datePublished": "2021-12-24T23:16:22-07:00","dateModified": "2021-12-24T23:16:22-07:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "Roy Wu",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/roynwu.github.io\/img\/avatar.JPG",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "Roy Wu"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Roy Wu"> Roy Wu<span class="header-title-post">Software Engineer</span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> Home </a><a class="menu-item" href="/projects/"> Projects </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/resume/resume.pdf"> Resume </a><a class="menu-item" href="https://github.com/roynwu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Roy Wu"> Roy Wu<span class="header-title-post">Software Engineer</span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/" title="">Home</a><a class="menu-item" href="/projects/" title="">Projects</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/resume/resume.pdf" title="">Resume</a><a class="menu-item" href="https://github.com/roynwu" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">PennCloud: Distributed Cloud Platform</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://roynwu.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Roy Wu</a></span>&nbsp;<span class="post-category">included in <a href="/categories/projects/"><i class="far fa-folder fa-fw"></i>Projects</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-24">2021-12-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;3391 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;16 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading/normal.min.svg"
+        data-src="/img/projects/penn-cloud/featured-image.JPG"
+        data-srcset="/img/projects/penn-cloud/featured-image.JPG, /img/projects/penn-cloud/featured-image.JPG 1.5x, /img/projects/penn-cloud/featured-image.JPG 2x"
+        data-sizes="auto"
+        alt="/img/projects/penn-cloud/featured-image.JPG"
+        title="/img/projects/penn-cloud/featured-image.JPG" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#features-implemented">Features Implemented</a>
+          <ul>
+            <li><a href="#frontend">Frontend</a>
+              <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#multithreaded-http-server">Multithreaded HTTP Server</a></li>
+                <li><a href="#user-accounts">User Accounts</a></li>
+                <li><a href="#webmail-service">Webmail Service</a></li>
+                <li><a href="#storage-service">Storage Service</a></li>
+                <li><a href="#load-balancing">Load Balancing</a></li>
+              </ul>
+            </li>
+            <li><a href="#admin-console">Admin Console</a></li>
+            <li><a href="#backend-key-value-store-and-master-node">Backend (Key-Value Store and Master Node)</a>
+              <ul>
+                <li><a href="#loggingrecovery">Logging/Recovery</a></li>
+                <li><a href="#replication">Replication</a></li>
+                <li><a href="#fault-tolerance">Fault Tolerance</a></li>
+              </ul>
+            </li>
+            <li><a href="#tablet-assignment">Tablet Assignment</a></li>
+          </ul>
+        </li>
+        <li><a href="#major-design-decisions">Major Design Decisions</a>
+          <ul>
+            <li><a href="#server-configuration">Server Configuration</a></li>
+            <li><a href="#value-encoding">Value Encoding</a></li>
+            <li><a href="#communication">Communication</a></li>
+            <li><a href="#consistency">Consistency</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>This repository contains implementation of a distributed software system. The goal is to design a small clone of Google Apps that primary consists of just two key apps: webmail and storage (similar to Gmail and Google Drive) and leaves out other fancy optics. The key components includes a web frontend and a key-value store backend. This work was done in collaboration with Thomas Donnelly, Katrina Ashton, and Jacob Glenn.</p>
+<!-- [**[paper](report.pdf)**] [**[code](https://github.com/roynwu/Artificial-Anime-Character-Design)**] -->
+<h3 id="design">Design</h3>
+<p>A basic session consists of a client connecting to our load balancer and getting redirected to a running frontend server. The user logs into the frontend server and the frontend server connects to the master node to receive a backend server that the user will connect to for the rest of their session, or until the backend node shuts down. From here, a client can request storage, email, and user services from its assigned backend node.</p>
+<p>Each backend node stores part of the larger bigtable, split into a few tablets. Each of these tablets has an assigned primary node. If the front-end sends GET request it will retrieve the value from the node it is connected to. If it send a PUT, CPUT or DELETE this must be done by the primary and then forwarded to all of the replicas. So if the front-end is connected to a replica then the replica forwards the request to the primary.</p>
+<p>For fault tolerance, there is a master node which keeps track of which backend servers are alive and which tablets they are the primary for. So when a node crashes the tablets it was primary for can be re-assigned. The front-end can also contact the master to be assigned to a new backend node if it detects that its current assigned node has crashed.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/penn-cloud/architecture_diagram.png" title="/img/projects/penn-cloud/architecture_diagram.png" data-thumbnail="/img/projects/penn-cloud/architecture_diagram.png" data-sub-html="<h2>Architecture diagram showing connections between components for a single user. Dashed lines indicate a component is being contacted to get assigned to a different component whereas a solid line indicates either a persistent connection or that the channel of communication will be used multiple times. The arrows show which node opens the connection, but data can be passed through both ways. Note that there are multiple replica groups, but only one is shown here to avoid over-crowding the diagram. Back-end servers within a replica group communicate, but only for consistency and recovery purposes and so it is not shown here.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/penn-cloud/architecture_diagram.png"
+            data-srcset="/img/projects/penn-cloud/architecture_diagram.png, /img/projects/penn-cloud/architecture_diagram.png 1.5x, /img/projects/penn-cloud/architecture_diagram.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/penn-cloud/architecture_diagram.png" width="550" />
+    </a><figcaption class="image-caption">Architecture diagram showing connections between components for a single user. Dashed lines indicate a component is being contacted to get assigned to a different component whereas a solid line indicates either a persistent connection or that the channel of communication will be used multiple times. The arrows show which node opens the connection, but data can be passed through both ways. Note that there are multiple replica groups, but only one is shown here to avoid over-crowding the diagram. Back-end servers within a replica group communicate, but only for consistency and recovery purposes and so it is not shown here.</figcaption>
+    </figure></p>
+<h3 id="features-implemented">Features Implemented</h3>
+<h4 id="frontend">Frontend</h4>
+<h5 id="overview">Overview</h5>
+<p>Front end servers are  multi-threaded http servers that 1) recieve user requests 2) query necessary data from the backend servers 3) send responses back to users, all in order to function as webmail and storage services to users. \textbf{User Accounts} allow the services to be used by different users. The webmail service and storage service  use simple HTML elements as described in the handout. How they use the KV store is described in detail in the following sections. Load balancing and duplication of front end servers was implemented with simple aliveness checks and round-robin strategy.</p>
+<h5 id="multithreaded-http-server">Multithreaded HTTP Server</h5>
+<p>The server has a similar structure to our ECHO server in HW2 MS1. The listening thread initializes and listens on a socket at a port set by the -p flag. When it receives a connection, it spawns a new thread to handle the request. As a result, the life cycle of a request to our front end always looks the same. 1) A request object is  created to represent the HTTP request sent over the socket via parsing. 2) A response object is created. 3) a handler is invoked to populate the response object, based on the path of the http request. 4) The resultant response object is then converted to an appropriate HTTP response and sent over  the socket to the user.</p>
+<p>Handlers were made for every type of request that is made to our servers. We assume that not all teams made explicit Request and Response objects and handlers, and we believe that our handlers are well organized and well thought through (e.g. see webapp.cc).
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/penn-cloud/httpserver.png" title="/img/projects/penn-cloud/httpserver.png" data-thumbnail="/img/projects/penn-cloud/httpserver.png" data-sub-html="<h2>Request/response lifecycle</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/penn-cloud/httpserver.png"
+            data-srcset="/img/projects/penn-cloud/httpserver.png, /img/projects/penn-cloud/httpserver.png 1.5x, /img/projects/penn-cloud/httpserver.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/penn-cloud/httpserver.png" width="400" />
+    </a><figcaption class="image-caption">Request/response lifecycle</figcaption>
+    </figure></p>
+<h5 id="user-accounts">User Accounts</h5>
+<p>We only stored one field with each username, namely the password, hence our KV store schema for users was
+<br/>
+<figure><a class="lightgallery" href="/img/projects/penn-cloud/table1.png" title="/img/projects/penn-cloud/table1.png" data-thumbnail="/img/projects/penn-cloud/table1.png" data-sub-html="<h2>KV store schema for users</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/penn-cloud/table1.png"
+            data-srcset="/img/projects/penn-cloud/table1.png, /img/projects/penn-cloud/table1.png 1.5x, /img/projects/penn-cloud/table1.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/penn-cloud/table1.png" width="325" />
+    </a><figcaption class="image-caption">KV store schema for users</figcaption>
+    </figure></p>
+<p>Using this data, we support signup, login, and profile changes (just password changing) on separate pages. Because of the multithreaded http server&rsquo;s session support, multiple account can log in on the same frontend server. Because of the load balancer, the same user can log in on different front end servers.</p>
+<p>Signup is done by a GET to make sure the username doesn&rsquo;t already exist, then a PUT. Login is done by a GET to authenticate password. Profile changes are done by a GET to authenticate old password and a PUT.</p>
+<h5 id="webmail-service">Webmail Service</h5>
+<p><strong>Mail Between Users</strong></p>
+<p>Our web mail service had two main pages: inbox and individual email views. Therefore, only two types of queries had to be made, one to retrieve a list of email metadatas for the inbox and one to retrieve email data for an email.</p>
+<p>With this in mind, we identified individual emails by guids (globally unique identifiers). Then our KV schema for mail was the following
+<br/>
+<figure><a class="lightgallery" href="/img/projects/penn-cloud/table2.png" title="/img/projects/penn-cloud/table2.png" data-thumbnail="/img/projects/penn-cloud/table2.png" data-sub-html="<h2>KV store schema for mail</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/penn-cloud/table2.png"
+            data-srcset="/img/projects/penn-cloud/table2.png, /img/projects/penn-cloud/table2.png 1.5x, /img/projects/penn-cloud/table2.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/penn-cloud/table2.png" width="700" />
+    </a><figcaption class="image-caption">KV store schema for mail</figcaption>
+    </figure></p>
+<p>Because the format is standard, we decided to just use delimiters and base64 encoding to pack and unpack these tuples.</p>
+<p>The inbox page requires a GET. Email composition requires 1) PUT email, 2) GET inbox, 3) append email metadata to inbox 4) PUT inbox. Email viewing requires a GET. Email replying and forwarding is similar to email composition, but with preloaded suggested from, to, subject, and body parameters sent from the email viewing page via HTTP form parameters.</p>
+<p><strong>Mail from Outside</strong></p>
+<p>We adapted the smtp server from HW2 to to receive emails from thunderbird and other smtp clients by using our backend instead of writing to .mbox files.</p>
+<p><strong>Mail to Outside</strong></p>
+<p>In order to send emails to gmail and seas accounts, we wrote code that acts as an smtp client. It 1) gets the host name of the SMTP server using an MX lookup 2) gets the IP from the host name using getaddrinfo 3) connects to the server 4) sends a sequence of SMTP commands and waits for replies.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/penn-cloud/smtp-client.png" title="/img/projects/penn-cloud/smtp-client.png" data-thumbnail="/img/projects/penn-cloud/smtp-client.png" data-sub-html="<h2>We send the appropraite sequence of SMTP commands, and print out the interleaved commands and replies. Various IO utils were written that were used widely throughout the frontend.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/penn-cloud/smtp-client.png"
+            data-srcset="/img/projects/penn-cloud/smtp-client.png, /img/projects/penn-cloud/smtp-client.png 1.5x, /img/projects/penn-cloud/smtp-client.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/penn-cloud/smtp-client.png" width="700" />
+    </a><figcaption class="image-caption">We send the appropraite sequence of SMTP commands, and print out the interleaved commands and replies. Various IO utils were written that were used widely throughout the frontend.</figcaption>
+    </figure></p>
+<p><strong>Areas for Improvement</strong></p>
+<ul>
+<li>
+<p>1 - When we compose an email it is split into these steps, 1) PUT email 2) GET inbox 3) append email metadata to inbox 4) PUT inbox. We talked to our TA John Hay about this, and figured that with small changes, we could make it so that we do a CPUT on the updated inbox, making sure that it is the same as the inbox we read, and hasn&rsquo;t been changed since then. If it has been change, we could loop around and read the updated inbox and start again. This will ensure that if a user is sent multiple emails at once or in quick succession they will all show up in the inbox, and thus ensure consistency.</p>
+</li>
+<li>
+<p>2 - Error messages could be printed on web pages when the expected actions (e.g. email composition) do not complete. This will make the system more usable.</p>
+</li>
+<li>
+<p>3 - Using frontend and backend communication, failed KV store procedures could be retried once or twice after failure. This will help with usability.</p>
+</li>
+</ul>
+<h5 id="storage-service">Storage Service</h5>
+<p><strong>R-C-V Schema</strong></p>
+<figure><a class="lightgallery" href="/img/projects/penn-cloud/table3.png" title="/img/projects/penn-cloud/table3.png" data-thumbnail="/img/projects/penn-cloud/table3.png" data-sub-html="<h2>R-C-V Schema</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/penn-cloud/table3.png"
+            data-srcset="/img/projects/penn-cloud/table3.png, /img/projects/penn-cloud/table3.png 1.5x, /img/projects/penn-cloud/table3.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/penn-cloud/table3.png" width="700" />
+    </a><figcaption class="image-caption">R-C-V Schema</figcaption>
+    </figure>
+<p>The storage service works by encoding files and folders first with a meta data layer containing their parent, if they are a folder, their filename, and a uuid that points to where their data is stored in the KV Store. This metadata is strored as a JSON string and read using the rapidJSON library. To show a folder the meta data of a folder is read and then data pointed to by the folder meta data is tokenized and read one at a time to get files that belong in a folder. Files are uploaded using a multi-part HTTP PUT request and are downloaded with HTTP GET requests. Files are renamed by only modifying their meta-data, stopping re-uploading of large files. Files are moved similarly, by only modifying the folder data and file parent metadata. Nested folders are checked on moves to stop source folders from being moved to their children. Folders are recursively deleted with DEL commands to the backend.</p>
+<p><strong>Areas for Improvement</strong></p>
+<ul>
+<li>1 - The rapidJSON library throws when not receiving a JSON string from the backend which would happen in case of node failure or interruption, these should be caught and turned into retry requests or displayed as HTTP errors.</li>
+<li>2 - Error messages could be printed on web pages when puts or gets do no complete within a certain time frame.</li>
+<li>3 - The page should display an upload or loading graphic when large files are being uploaded and until all replication has taken place so a user knows that the system is not hanging.</li>
+</ul>
+<h5 id="load-balancing">Load Balancing</h5>
+<p>The load balancer redirects users to alive frontend servers using HTTP. For every frontend server, there is one thread which updates its aliveness every two seconds by sending an HTTP request to it server at /ping. If the thread cannot establish the connection, or receives no HTTP response, the frontend server is labeled not alive. The set of front end servers to ping is established in a global variable, and non-alive servers are still pinged. For every user connection, a new thread is created and the user is sent an HTTP 303 redirect to an alive server using a round-robin approach. If there is no alive server, the robin keeping going around, but once there is, it breaks the loop. Both the aliveness variables and the round robin variable use locking amoug all threads. As a result, the load balancer is stable.</p>
+<h4 id="admin-console">Admin Console</h4>
+<p>The Admin console pings the master node on a set socket to retrieve the status of all backend servers using a GET request. It then sends requests to individual servers to retrieve their KV stores for printing. The Admin console sends shutdown and wake up requests to the master node which it then routes to a specified server. The load balancer is also pinged in order to get the current alive status of frontend nodes. The master node determines if a backend node is alive through sending a heartbeat message and from front-end get and delete requests of a user:server map.</p>
+<h4 id="backend-key-value-store-and-master-node">Backend (Key-Value Store and Master Node)</h4>
+<p>We implemented a distributed key-value store that is made up of a single master node and disjoint replica groups of servers, each of which contains a fixed number of tablets. The master node maintains membership information of the replica groups and directs clients to the appropriate backend server based on the username queried. Each tablet has a primary assigned and we use remote writes to ensure consistency.</p>
+<p>When a back-end server crashes the master is supposed to assign a new primary for any tablets which the crashed server was the primary for. However our code for that is not quite working properly.</p>
+<p>The master node assigns a user to each back-end node, which means that users can access their storage across sessions. However we didn&rsquo;t take into account that the email may be stored in one replica group whereas the user may be assigned to the other replica group.</p>
+<h5 id="loggingrecovery">Logging/Recovery</h5>
+<p>Each tablet on the server has an associated checkpoint, meta and log file. To allow for easier parsing of the checkpoint files, a hashmap is used on the row to assign where to start writing that cell. Then the offsets for each bin are kept in memory and written to the meta file. Each table also has an associated version number, which is assigned by the primary and sent over with its commands. Every time the primary performs a PUT, CPUT or DELETE operation it increments the version number by 1. This can then be used to see if a checkpoint or log file is out-of-date upon recovery. (The version number of the checkpoint is stored in the meta file).</p>
+<p>Upon recovery, the backend server will start a recovery thread for each table. This thread will contact the master node to work out who the current primary for the table is, and then request the version numbers of its checkpoint and log files. If the checkpoint version number is higher the node will request the primary to send over the checkpoint, meta and log files and over-ride its own with them. If the checkpoint file version number is not higher but the log version is then it will just request the log be sent. After this the table will be reconstructed using the checkpoint file and then the log file.</p>
+<p>We also allowed for there to be more tablets present on the server than can fit into memory. GETs can be done to a tablet in memory by parsing the checkpoint file. PUT, CPUT and DELETE need to be done to a tablet in memory, so if the tablet is on disk it is first loaded into memory. If there are already the set number of tablets in memory then the one that hasn&rsquo;t been in use for the longest is sent to disk by writing a checkpoint of it and then clearning it from memory. We did not have servers send a message to tell the other servers they are doing this so it may introduce some inconsistency. The initial thought was that checking the checkpoint and log version of the master node would address this, but we may need an additional check to deal with the case where the local checkpoint version is higher than the primary version due to moving a tablet into memory.
+<br/><br/>
+<figure><a class="lightgallery" href="/img/projects/penn-cloud/recovery.png" title="/img/projects/penn-cloud/recovery.png" data-thumbnail="/img/projects/penn-cloud/recovery.png" data-sub-html="<h2>Recovery process</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading/normal.min.svg"
+            data-src="/img/projects/penn-cloud/recovery.png"
+            data-srcset="/img/projects/penn-cloud/recovery.png, /img/projects/penn-cloud/recovery.png 1.5x, /img/projects/penn-cloud/recovery.png 2x"
+            data-sizes="auto"
+            alt="/img/projects/penn-cloud/recovery.png" width="600" />
+    </a><figcaption class="image-caption">Recovery process</figcaption>
+    </figure></p>
+<h5 id="replication">Replication</h5>
+<p>We made the desicion to have disjoint replica groups instead of mixing tablets between different servers for simplicity. Each server in a given replica group should have the same information stored. Each tablet has a primary assigned that is the only node which can do PUT,CPUT or DELETE requests. However any back-end server can perform a GET request. If a PUT, CPUT or DELETE request is sent to a node which isn&rsquo;t a primary for that tablet then it forwards the request to the primary. After the primary performs a PUT, CPUT or DELETE operation (either from a front-end node or a back-end node) it forwards the request to all of the servers in its replica group. The request is distinguished from requests from the front-end using a prefix. It also has an associated version number which the primary sets to aid in recovery (see Section \ref{sss: recovery}). We could have also used this version number to ensure that requests from the primary were processed in order and query the primary for lost messages but we didn&rsquo;t have time to implement this.</p>
+<h5 id="fault-tolerance">Fault Tolerance</h5>
+<p>The master node keeps track of the status of each backend server by maintaining a TCP connection and regularly sending a &ldquo;heartbeat&rdquo; message to each connected server, with each connection managed on a separate thread. If a server fails to respond to the master&rsquo;s &ldquo;heartbeat&rdquo; message within a time limit of 10 seconds, the master will mark the server as crashed. Then, it will find out which tables the server was primary for, assign new primaries within the same cluster, and notify all other servers in the cluster the newly updated primaries.</p>
+<h4 id="tablet-assignment">Tablet Assignment</h4>
+<p>We define a set number of tablets which can be in memory at once, which is smaller than the total number of tablets. To improve performance we thus want key-value pairs which are likely to be used often (especially if they are modified often) to be grouped together. For example, we want the metadata for the inbox and storage page to be on one tablet and big files that are unlikely to be changed on another. One way to do this would be to get the front-end to flag whether they want a value to be easily accessible or not, however this would break the key-value abstraction. Thus we simply assign based on the size of the value. If it is less than a certain size it is added to the first tablet with enough space, and if it is over that size it is added to the last tablet with enough space. We did not implement any error handling for if there is not enough space on any of the tablets.</p>
+<p>Each cell in the table has a set maximum size for the value it can store. If a value is larger than the cell size, then it is split across multiple cells. Each cell has bool variable which indicates whether its data is split across more cells. If so, it has a new row and next column variable to allow it to locate the next chunk of the value, similar to a linked list. When adding the next chunk the row is kept the same but the column is set to &ldquo;COL#i&rdquo;, where COL is the original column name and i is the index of the chunk. We communicated with the front-end to ensure that none of their column names would use the # symbol.</p>
+<p>Initially we set the maximum cell size to be the same as the size which is used to split between the tablets as described above, but we found that when adding very large files this created memory issues that caused the process to be killed.</p>
+<h3 id="major-design-decisions">Major Design Decisions</h3>
+<h4 id="server-configuration">Server Configuration</h4>
+<p>We split the back-end files into replica groups which will all contain the same information (no mixing of tablets between groups)</p>
+<p>We use a static number of back-end servers with ip addresses and port numbers defined in a config file for each replica group. We assume that all of these back-end servers are running at the start, although of course they may fail over time.</p>
+<p>The number of tablets per server is also fixed, although not all tablets are necessarily in use.</p>
+<h4 id="value-encoding">Value Encoding</h4>
+<p>We use base64 encoded strings for the files and some email fields, and plain text for other email fields and user information.</p>
+<h4 id="communication">Communication</h4>
+<p>We use proprietary communication between all nodes except for between the front-end nodes, which use a HTTP format.</p>
+<p>The proprietary communication is done by using strings in a known format, which generally either includes the message length for long messages or ends in a newline for short messages. When appropriate, to deal with arbitrary characters the lengths of variables separated by deliminators are used at the start of the message and then the variables are appended to the end without deliminators. This was done as it was the easiest way to get started and then became too ingrained to change.</p>
+<p>We believe that we could improve the frontend backend communication by replacing it with HTTP, where the notions of a status code, arbitrary bytes of content, and content length are natural and we already have some code to parse HTTP Requests and generate HTTP Responses.</p>
+<p>TCP is used for all communication between nodes. All connections except for one between the master and back-end are not persistent, they are used for only one command and then closed.</p>
+<h4 id="consistency">Consistency</h4>
+<p>In order to provide sequential consistency we use remote writes to a primary. We only use one phase commit as we did not have time to implement two or three phase commit, so if a message is lost then consistency will be broken.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-12-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/penn-cloud/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/distributed-systems/">Distributed Systems</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/headline-writer/" class="prev" rel="prev" title="Headline-Writer: Abstractive Text Summarization with Attention and Pointer-Generator Network"><i class="fas fa-angle-left fa-fw"></i>Headline-Writer: Abstractive Text Summarization with Attention and Pointer-Generator Network</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">&copy; 2022 <a # href="https://roynwu.github.io">Roy Wu</a> | Powered by <a # href="https://gohugo.io" target="_blank">Hugo</a></div><div class="footer-line"></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

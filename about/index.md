@@ -36,11 +36,13 @@
       </div>
     </div>
     <div class="w3-container">
-      <p style="font-size:13px"><i class="fa fa-map-marker-alt fa-fw w3-margin-right" style="margin-top: 0.75em"></i>Philadelphia, PA</p>
-      <p style="font-size:13px"><i class="fa fa-home fa-fw w3-margin-right"></i>New York, NY</p>
-      <p style="font-size:13px"><i class="fa fa-envelope fa-fw w3-margin-right"></i>wuroy18@gmail.com</p>
-      <!-- <p style="font-size:13px;margin-bottom: -0.25em""><i class="fa fa-mobile fa-fw w3-margin-right"></i>+1 (973) 901-1028</p> --><hr>
-      <center><p style="font-size:14px;margin-bottom: 1.5em;margin-top: -0.25em">[<b><u><a href="https://roynwu.github.io/resume/resume.pdf">view resume</a></u></b>]</p></center>
+      <!-- <p style="font-size:13px"><i class="fa fa-map-marker-alt fa-fw w3-margin-right" style="margin-top: 0.75em"></i>Philadelphia, PA</p> -->
+      <p style="font-size:13px"><i class="fa fa-building fa-fw w3-margin-right" style="margin-top: 1.05em"></i>Cisco Systems</p> 
+      <p style="font-size:13px"><i class="fa fa-university fa-fw w3-margin-right"></i>University of Pennsylvania</p>
+            <p style="font-size:13px"><i class="fa fa-home fa-fw w3-margin-right"></i>New York, NY</p>
+      <p style="font-size:13px"><i class="fa fa-link fa-fw w3-margin-right"></i><a href="https://roynwu.github.io/">roynwu.github.io</a></p><br>
+      <!-- <p style="font-size:13px;margin-bottom: -0.25em""><i class="fa fa-mobile fa-fw w3-margin-right"></i>+1 (973) 901-1028</p> -->
+      <!-- <center><p style="font-size:14px;margin-bottom: 1.5em;margin-top: -0.25em">[<b><u><a href="https://roynwu.github.io/resume/resume.pdf">view resume</a></u></b>]</p></center> -->
     </div>
   </div>
 
