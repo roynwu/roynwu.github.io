@@ -44,12 +44,12 @@
 }
 
 .button4 {
-  background-color: white;
+  background-color: inherit;
   color: black;
   border: 2px solid #e7e7e7;
 }
 
-.button4:hover {background-color: #e7e7e7;}
+.button4:hover {background-color: #inherit;}
 
 .button5 {
   background-color: white;
