@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="/projects.css">
 
-<!-- {{< image width=100% src="/img/projects/headline-writer/featured-image.JPG" >}} -->
+<!-- {{< image width=100% src="/img/projects/penn-cloud/featured-image-alt1.JPG" >}} -->
 
 <p style="color:inherit;font-size:15px;margin-bottom: 1.0em"><i class="fa fa-tags fa-fw"></i> <b>Categories:</b>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/distributed-systems" style="color:inherit;">Distributed Systems</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/deep-learning" style="color:inherit;">Deep Learning</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/computer-vision" style="color:inherit;">Computer Vision</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/natural-language-processing" style="color:inherit;">Natural Language Processing</a></b></button>
 
@@ -39,3 +39,5 @@
 <a href="https://github.com/roynwu/Artificial-Anime-Character-Design" style="color:inherit;" target="_blank"><button class="button button2"><b>code</b></button></a>
 
 <hr>
+
+<!-- {{< image width=100% src="/img/projects/penn-cloud/featured-image-alt1.JPG" >}} -->
