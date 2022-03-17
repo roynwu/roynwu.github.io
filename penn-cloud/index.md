@@ -1,7 +1,7 @@
 # PennCloud: Distributed Cloud Platform
 
 
-This repository contains implementation of a distributed software system. The goal is to design a small clone of Google Apps that primary consists of just two key apps: webmail and storage (similar to Gmail and Google Drive) and leaves out other fancy optics. The key components includes a web frontend and a key-value store backend. This work was done in collaboration with Thomas Donnelly, Katrina Ashton, and Jacob Glenn. 
+This repository contains implementation of a distributed software system. The goal is to design a mini clone of Google Apps that primary consists of just two key apps: webmail and storage (similar to Gmail and Google Drive) and leaves out other fancy optics. The key components includes a web frontend and a key-value store backend. This work was done in collaboration with Thomas Donnelly, Katrina Ashton, and Jacob Glenn. 
 
 <!-- [**[paper](report.pdf)**] [**[code](https://github.com/roynwu/Artificial-Anime-Character-Design)**] -->
 
