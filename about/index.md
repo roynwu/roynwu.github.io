@@ -28,7 +28,7 @@
   <div class="w3-text-grey w3-card w3-margin-bottom">
     <div class="w3-display-container">
       <!-- <img src="/img/portrait.jpg" style="width:100%" alt="Avatar"> -->
-      <img src="/img/alt5.JPG" style="width:100%" alt="Avatar">
+      <img src="/img/alt6.JPG" style="width:100%" alt="Avatar">
       <div class="w3-display-bottomleft w3-container">
         <h2 style="color:white;margin-bottom: 1.0em">Roy N. Wu</h2>
         <!-- <h2 style="color:white;margin-bottom: -0.05em">Roy Wu</h2> -->
