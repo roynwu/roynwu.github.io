@@ -11,7 +11,7 @@
     <guid>https://roynwu.github.io/penn-cloud/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/img/projects/penn-cloud/featured-image-alt5.jpeg" referrerpolicy="no-referrer">
-            </div>This repository contains implementation of a distributed software system. The goal is to design a mini clone of Google Apps that primary consists of just two key apps: webmail and storage (similar to Gmail and Google Drive) and leaves out other fancy optics. The key components includes a web frontend and a key-value store backend. This work was done in collaboration with Thomas Donnelly, Katrina Ashton, and Jacob Glenn.
+            </div>This repository contains implementation of a distributed software system. The goal is to design a small clone of Google Apps that primary consists of just two key apps: webmail and storage (similar to Gmail and Google Drive) and leaves out other fancy optics. The key components includes a web frontend and a key-value store backend. This work was done in collaboration with Thomas Donnelly, Katrina Ashton, and Jacob Glenn.
 Design A basic session consists of a client connecting to our load balancer and getting redirected to a running frontend server.]]></description>
 </item><item>
     <title>Headline-Writer: Abstractive Text Summarization with Attention and Pointer-Generator Network</title>
