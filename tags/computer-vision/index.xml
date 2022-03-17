@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Computer Vision - Tag - Roy Wu</title>
+        <title>Computer Vision - Tag - Roy N. Wu</title>
         <link>https://roynwu.github.io/tags/computer-vision/</link>
-        <description>Computer Vision - Tag - Roy Wu</description>
+        <description>Computer Vision - Tag - Roy N. Wu</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 05 May 2020 23:16:22 -0700</lastBuildDate><atom:link href="https://roynwu.github.io/tags/computer-vision/" rel="self" type="application/rss+xml" /><item>
     <title>Artificial Anime Character Design: An Application of Generative Adversarial Networks (GANs)</title>
     <link>https://roynwu.github.io/artificial-anime-character-design/</link>

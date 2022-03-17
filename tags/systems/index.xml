@@ -1,7 +1,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Distributed Systems - Tag - Roy Wu</title>
+        <title>Distributed Systems - Tag - Roy N. Wu</title>
         <link>https://roynwu.github.io/tags/systems/</link>
-        <description>Distributed Systems - Tag - Roy Wu</description>
+        <description>Distributed Systems - Tag - Roy N. Wu</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://roynwu.github.io/tags/systems/" rel="self" type="application/rss+xml" /></channel>
 </rss>
