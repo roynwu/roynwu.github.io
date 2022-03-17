@@ -33,7 +33,7 @@
         <h2 style="color:white;margin-bottom: 1.0em">Roy N. Wu</h2>
         <!-- <h2 style="color:white;margin-bottom: -0.05em">Roy Wu</h2> -->
         <!-- <p style="font-size:14px;color:#ECF0F1;margin-bottom: -0.55em">Software Engineer</p> -->
-        <!-- <p style="font-size:10px;color:#ECF0F1">M.S. in Computer Science, Data Science</p> -->
+        <!-- <p style="font-size:10px;color:#ECF0F1">M.S. in Computer Science & Data Science</p> -->
       </div>
     </div>
     <div class="w3-container">
