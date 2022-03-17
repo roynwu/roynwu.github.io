@@ -10,7 +10,7 @@
     <author>Author</author>
     <guid>https://roynwu.github.io/headline-writer/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/img/projects/headline-writer/featured-image.JPG" referrerpolicy="no-referrer">
+                <img src="/img/projects/headline-writer/featured-image-alt1.JPG" referrerpolicy="no-referrer">
             </div>This repository contains implementations of Sequence-to-sequence (Seq2Seq) neural networks for abstractive text summarization. We implement Attention mechanism, Teacher Forcing algorithm, and Pointer-Generator Network (inspired by Get To The Point: Summarization with Pointer-Generator Networks) in our experiment to improve our baseline models. This work was done in collaboration with Henglin Wu, Ruilin Zhao, and Chenyuan Li.
 [paper] [code]
 Watch our video presentation below:
