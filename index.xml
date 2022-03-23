@@ -16,6 +16,16 @@
             </div>This repository contains implementation of a distributed software system. The goal is to design a small clone of Google Apps that primary consists of just two key apps: webmail and storage (similar to Gmail and Google Drive) and leaves out other fancy optics. The key components includes a web frontend and a key-value store backend. This work was done in collaboration with Thomas Donnelly, Katrina Ashton, and Jacob Glenn.
 Design A basic session consists of a client connecting to our load balancer and getting redirected to a running frontend server.]]></description>
 </item><item>
+    <title>Chat Room: Replicated Chat Server With Multicast</title>
+    <link>https://roynwu.github.io/chat-server/</link>
+    <pubDate>Thu, 11 Nov 2021 23:16:22 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://roynwu.github.io/chat-server/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/img/projects/chat-server/featured-image-alt2.JPG" referrerpolicy="no-referrer">
+            </div>This repository contains implementation of a simple replicated chat server that uses multicast to distribute the chat messages to the different replicas. The servers have the option to deliver clients’ messages following three different types of ordering protocols: Unordered, FIFO, or total. All communications are done via unicast UDP.
+Overview The figure below shows a sketch of the system. There are two kinds of processes: servers (represented by orange squares) and clients (represented by yellow circles).]]></description>
+</item><item>
     <title>Headline-Writer: Abstractive Text Summarization with Attention and Pointer-Generator Network</title>
     <link>https://roynwu.github.io/headline-writer/</link>
     <pubDate>Wed, 06 May 2020 23:16:22 -0700</pubDate>
