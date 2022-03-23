@@ -39,6 +39,7 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 
 .button1 {
   background-color: inherit; 
+  font-size: 12px;
   color: inherit; 
   border: 2px solid #505050;
 }
