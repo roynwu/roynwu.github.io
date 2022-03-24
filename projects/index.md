@@ -15,7 +15,8 @@
 <p style="color:inherit;font-size:14px;margin-top: 1.0em;margin-bottom: 2.0em"><i class="fa fa-tags fa-fw"></i> <b>Categories:</b>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/distributed-systems" style="color:inherit;">Distributed Systems</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/deep-learning" style="color:inherit;">Deep Learning</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/computer-vision" style="color:inherit;">Computer Vision</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/natural-language-processing" style="color:inherit;">Natural Language Processing</a></b></button>
 
 <div class="w3-half">
-<div class="w3-container w3-card w3-margin-bottom">
+<div class="w3-container w3-card w3-margin-bottom w3-border w3-round w3-hover-border-cyan">
+<!-- <div class="w3-panel w3-border w3-round w3-hover-border-cyan"> -->
 <div class="w3-container">
 <p style="text-align:left;font-size:36px;margin-top: 0.55em;margin-bottom: 0.5em"><a href="/penn-cloud/"><i class="fa fa-folder-o fa-fw"></i></a>
 	<span style="float:right;color:darkgray;font-size:20px">
@@ -43,7 +44,8 @@
 </div>
 </div>
 
-<div class="w3-container w3-card w3-margin-bottom">
+<div class="w3-container w3-card w3-margin-bottom w3-border w3-round w3-hover-border-cyan">
+<!-- <div class="w3-panel w3-border w3-round w3-hover-border-cyan"> -->
 <div class="w3-container">
 <p style="text-align:left;font-size:36px;margin-top: 0.55em;margin-bottom: 0.5em"><a href="/headline-writer/"><i class="fa fa-folder-o fa-fw"></i></a>
 	<span style="float:right;color:darkgray;font-size:20px">
@@ -74,7 +76,8 @@
 
 <div class="w3-half">
 
-<div class="w3-container w3-card w3-margin-bottom">
+<div class="w3-container w3-card w3-margin-bottom w3-border w3-round w3-hover-border-cyan">
+<!-- <div class="w3-panel w3-border w3-round w3-hover-border-cyan"> -->
 <div class="w3-container">
 <p style="text-align:left;font-size:36px;margin-top: 0.55em;margin-bottom: 0.5em"><a href="/chat-server"><i class="fa fa-folder-o fa-fw"></i></a>
 	<span style="float:right;color:darkgray;font-size:20px">
@@ -106,7 +109,8 @@ clients’ messages following three different types of ordering protocols: Unord
 </div>
 </div>
 
-<div class="w3-container w3-card w3-margin-bottom">
+<div class="w3-container w3-card w3-margin-bottom w3-border w3-round w3-hover-border-cyan">
+<!-- <div class="w3-panel w3-border w3-round w3-hover-border-cyan"> -->
 <div class="w3-container">
 <p style="text-align:left;font-size:36px;margin-top: 0.55em;margin-bottom: 0.5em"><a href="/artificial-anime-character-design/"><i class="fa fa-folder-o fa-fw"></i></a>
 	<span style="float:right;color:darkgray;font-size:20px">
