@@ -9,12 +9,13 @@
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
+<p style="color:inherit;font-size:14px;margin-top: 1.0em;margin-bottom: 2.0em"><i class="fa fa-tags fa-fw"></i> <b>Categories:</b>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/distributed-systems" style="color:inherit;">Distributed Systems</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/deep-learning" style="color:inherit;">Deep Learning</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/computer-vision" style="color:inherit;">Computer Vision</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/natural-language-processing" style="color:inherit;">Natural Language Processing</a></b></button>
+
 <!-- The Grid -->
 <div class="w3-row-padding">
 
-<p style="color:inherit;font-size:14px;margin-top: 1.0em;margin-bottom: 2.0em"><i class="fa fa-tags fa-fw"></i> <b>Categories:</b>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/distributed-systems" style="color:inherit;">Distributed Systems</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/deep-learning" style="color:inherit;">Deep Learning</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/computer-vision" style="color:inherit;">Computer Vision</a></b></button>&nbsp;&nbsp;<button class="button button1"><b><a href="/tags/natural-language-processing" style="color:inherit;">Natural Language Processing</a></b></button>
-
 <div class="w3-half">
+<!-- <div class="w3-col"> -->
 <div class="w3-container w3-card w3-margin-bottom w3-border w3-round w3-hover-border-cyan">
 <!-- <div class="w3-panel w3-border w3-round w3-hover-border-cyan"> -->
 <div class="w3-container">
@@ -43,38 +44,10 @@
 <!-- <hr> -->
 </div>
 </div>
-
-<div class="w3-container w3-card w3-margin-bottom w3-border w3-round w3-hover-border-cyan">
-<!-- <div class="w3-panel w3-border w3-round w3-hover-border-cyan"> -->
-<div class="w3-container">
-<p style="text-align:left;font-size:36px;margin-top: 0.55em;margin-bottom: 0.5em"><a href="/headline-writer/"><i class="fa fa-folder-o fa-fw"></i></a>
-	<span style="float:right;color:darkgray;font-size:20px">
-    	<!-- <a href="/headline-writer/"><i class="fa fa-external-link fa-fw"></i></a> -->
-    	<a href="https://github.com/roynwu/Headline-Writer"><i class="fa fa-github fa-fw"></i></a>
-    	<a href="/headline-writer/report.pdf"><i class="fa fa-file-pdf-o fa-fw"></i></a>
-    	<a href="/headline-writer/"><i class="fa fa-external-link-square fa-fw"></i></a>
-	</span></p>
-<!-- <p style="color:darkgray;font-size:14px;margin-top: 2.0em;margin-bottom: -0.5em">May 2020</p> -->
-<h3><a href="/headline-writer/" style="color: inherit;font-size:18px">Headline-Writer: Abstractive Text Summarization</a></h3>
-<!-- <p style="color:darkgray;font-size:15px;margin-top: -0.5em"><i class="fa fa-user-circle fa-fw"></i><a href="/"> Roy Wu</a>, Henglin Wu, Ruilin Zhao, Chenyuan Li</p> -->
-<p style="color:gray;font-size:14px;margin-top: -0.75em">This repository contains implementations of Sequence-to-sequence (Seq2Seq) neural networks for abstractive text summarization. We implement Attention mechanism, Teacher Forcing algorithm, and Pointer-Generator Network (inspired by <a href="https://arxiv.org/abs/1704.04368">Get To The Point: Summarization with Pointer-Generator Networks</a>) in our experiment.</p>
-<!-- <p style="text-align:right;font-family:inherit;color:inherit;font-size:13px;margin-top: 0.75em;margin-bottom: -0.25em"><i class="fa fa-tags fa-fw"></i><a href="/tags/deep-learning/" style="color:inherit;"> Deep Learning</a>,<a href="/tags/natural-language-processing/" style="color:inherit;"> Natural Language Processing</a>
-	<span style="float:left;font-family:monospace;color:darkgray;font-size:14px">
-        Python&nbsp;&nbsp;&nbsp;PyTorch
-    </span></p><br> -->
-<p style="font-family:monospace;color:darkgray;font-size:14px">Python&nbsp;&nbsp;&nbsp;PyTorch</p>
-<p style="text-align:right;font-family:inherit;color:inherit;font-size:13px;margin-top: 0.5em;margin-bottom: 1.75em"><i class="fa fa-tags fa-fw"></i><a href="/tags/deep-learning/" style="color:inherit;"> Deep Learning</a>,<a href="/tags/natural-language-processing/" style="color:inherit;"> Natural Language Processing</a></p>
-<!-- <p style="text-align: right;color:inherit;font-size:13px;margin-top: -1.0em;margin-bottom: 0.25em"><i class="fa fa-tags fa-fw"></i><a href="/tags/deep-learning/" style="color:inherit;"> Deep Learning</a>,<a href="/tags/natural-language-processing/" style="color:inherit;"> Natural Language Processing</a></p> -->
-<!-- <a href="/headline-writer/" style="color:inherit;"><button class="button button2"><b>blog</b></button></a> 
-<a href="/headline-writer/report.pdf" style="color:inherit;" target="_blank"><button class="button button2"><b>paper</b></button></a> 
-<a href="https://github.com/roynwu/Headline-Writer" style="color:inherit;" target="_blank"><button class="button button2"><b>code</b></button></a> 
-<br><br> -->
-<!-- <hr> -->
-</div>
-</div>
 </div>
 
 <div class="w3-half">
+<!-- <div class="w3-col"> -->
 
 <div class="w3-container w3-card w3-margin-bottom w3-border w3-round w3-hover-border-cyan">
 <!-- <div class="w3-panel w3-border w3-round w3-hover-border-cyan"> -->
@@ -108,7 +81,46 @@ clients’ messages following three different types of ordering protocols: Unord
 <!-- <hr> -->
 </div>
 </div>
+</div>
+</div>
 
+<!-- The Grid -->
+<div class="w3-row-padding">
+
+<!-- <div class="w3-col"> -->
+<div class="w3-half">
+<div class="w3-container w3-card w3-margin-bottom w3-border w3-round w3-hover-border-cyan">
+<!-- <div class="w3-panel w3-border w3-round w3-hover-border-cyan"> -->
+<div class="w3-container">
+<p style="text-align:left;font-size:36px;margin-top: 0.55em;margin-bottom: 0.5em"><a href="/headline-writer/"><i class="fa fa-folder-o fa-fw"></i></a>
+	<span style="float:right;color:darkgray;font-size:20px">
+    	<!-- <a href="/headline-writer/"><i class="fa fa-external-link fa-fw"></i></a> -->
+    	<a href="https://github.com/roynwu/Headline-Writer"><i class="fa fa-github fa-fw"></i></a>
+    	<a href="/headline-writer/report.pdf"><i class="fa fa-file-pdf-o fa-fw"></i></a>
+    	<a href="/headline-writer/"><i class="fa fa-external-link-square fa-fw"></i></a>
+	</span></p>
+<!-- <p style="color:darkgray;font-size:14px;margin-top: 2.0em;margin-bottom: -0.5em">May 2020</p> -->
+<h3><a href="/headline-writer/" style="color: inherit;font-size:18px">Headline-Writer: Abstractive Text Summarization</a></h3>
+<!-- <p style="color:darkgray;font-size:15px;margin-top: -0.5em"><i class="fa fa-user-circle fa-fw"></i><a href="/"> Roy Wu</a>, Henglin Wu, Ruilin Zhao, Chenyuan Li</p> -->
+<p style="color:gray;font-size:14px;margin-top: -0.75em">This repository contains implementations of Sequence-to-sequence (Seq2Seq) neural networks for abstractive text summarization. We implement Attention mechanism, Teacher Forcing algorithm, and Pointer-Generator Network (inspired by <a href="https://arxiv.org/abs/1704.04368">Get To The Point: Summarization with Pointer-Generator Networks</a>) in our experiment.</p>
+<!-- <p style="text-align:right;font-family:inherit;color:inherit;font-size:13px;margin-top: 0.75em;margin-bottom: -0.25em"><i class="fa fa-tags fa-fw"></i><a href="/tags/deep-learning/" style="color:inherit;"> Deep Learning</a>,<a href="/tags/natural-language-processing/" style="color:inherit;"> Natural Language Processing</a>
+	<span style="float:left;font-family:monospace;color:darkgray;font-size:14px">
+        Python&nbsp;&nbsp;&nbsp;PyTorch
+    </span></p><br> -->
+<p style="font-family:monospace;color:darkgray;font-size:14px">Python&nbsp;&nbsp;&nbsp;PyTorch</p>
+<p style="text-align:right;font-family:inherit;color:inherit;font-size:13px;margin-top: 0.5em;margin-bottom: 1.75em"><i class="fa fa-tags fa-fw"></i><a href="/tags/deep-learning/" style="color:inherit;"> Deep Learning</a>,<a href="/tags/natural-language-processing/" style="color:inherit;"> Natural Language Processing</a></p>
+<!-- <p style="text-align: right;color:inherit;font-size:13px;margin-top: -1.0em;margin-bottom: 0.25em"><i class="fa fa-tags fa-fw"></i><a href="/tags/deep-learning/" style="color:inherit;"> Deep Learning</a>,<a href="/tags/natural-language-processing/" style="color:inherit;"> Natural Language Processing</a></p> -->
+<!-- <a href="/headline-writer/" style="color:inherit;"><button class="button button2"><b>blog</b></button></a> 
+<a href="/headline-writer/report.pdf" style="color:inherit;" target="_blank"><button class="button button2"><b>paper</b></button></a> 
+<a href="https://github.com/roynwu/Headline-Writer" style="color:inherit;" target="_blank"><button class="button button2"><b>code</b></button></a> 
+<br><br> -->
+<!-- <hr> -->
+</div>
+</div>
+</div>
+
+<!-- <div class="w3-col"> -->
+<div class="w3-half">
 <div class="w3-container w3-card w3-margin-bottom w3-border w3-round w3-hover-border-cyan">
 <!-- <div class="w3-panel w3-border w3-round w3-hover-border-cyan"> -->
 <div class="w3-container">
@@ -138,6 +150,7 @@ clients’ messages following three different types of ordering protocols: Unord
 </div>
 </div>
 </div>
+</div>
 
 <!-- End Grid -->
 </div>
@@ -148,7 +161,7 @@ clients’ messages following three different types of ordering protocols: Unord
 <!-- {{< image width=100% src="/img/projects/penn-cloud/featured-image-alt1.JPG" >}} -->
 
 <footer class="w3-container w3-center w3-margin-top">
-  <hr>
   <i class="fa fa-test w3-hover-opacity"></i>
   <p style="font-size:14px;margin-top:1.05em">&nbsp;</p>
+  <br><br>
 </footer>

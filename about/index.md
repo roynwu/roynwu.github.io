@@ -209,9 +209,10 @@
 </div>
 
 <footer class="w3-container w3-center w3-margin-top">
-  <hr>
+<!--   <hr> -->
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <p style="font-size:14px;margin-top:1.05em">&nbsp;</p>
+  <br><br>
 </footer>
 
 
